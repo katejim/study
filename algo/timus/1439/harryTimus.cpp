@@ -1,25 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>
 
 using std::cin;
 using std::cout;
 using std::endl;
-using std::vector;
-
-struct AVLTreeNode
-{
-    int key;
-    AVLTreeNode * left;
-    AVLTreeNode * right;
-
-    int size;
-    int height;
-
-    explicit AVLTreeNode(int m_key) :
-        key(m_key), left(0), right(0), size(1), height(1)
-    {
-    }
-};
+using std::max;
 
 class BattleWithYouKnowWho
 {
@@ -30,7 +15,7 @@ class BattleWithYouKnowWho
     {
     }
 
-    int get_real_room(int in_query)
+    int get_real_room(int in_query) const
     {
         int left_count = 0;
         AVLTreeNode * p = tree;
@@ -64,36 +49,50 @@ class BattleWithYouKnowWho
 
 
   private:
+    struct AVLTreeNode
+    {
+        int key;
+        AVLTreeNode * left;
+        AVLTreeNode * right;
+
+        int size;
+        int height;
+
+        explicit AVLTreeNode(int m_key) :
+            key(m_key), left(0), right(0), size(1), height(1)
+        {
+        }
+    };
+
+    BattleWithYouKnowWho( BattleWithYouKnowWho const &);
+    void operator = ( BattleWithYouKnowWho const &);
+
     AVLTreeNode * tree;
 
-    int get_height(AVLTreeNode * const p)
+    static int get_height(AVLTreeNode const * p)
     {
         return p ? p->height : 0;
     }
-    int get_size(AVLTreeNode * const p)
+
+    static int get_size(AVLTreeNode const * p)
     {
         return p ? p->size : 0;
     }
 
-    int diff(AVLTreeNode * const p)
+    static int diff(AVLTreeNode const * p)
     {
         return get_height(p->right) - get_height(p->left);
     }
 
-    void fix_height(AVLTreeNode * p)
+    static void fix_height(AVLTreeNode * p)
     {
         int height_left_subtree = get_height(p->left);
         int height_right_subtree = get_height(p->right);
-
-        if(height_left_subtree > height_right_subtree)
-            p->height = height_left_subtree;
-        else
-            p->height = height_right_subtree;
-
+        p->height = max(height_left_subtree, height_right_subtree);
         ++p->height;
     }
 
-    AVLTreeNode * rotate_right(AVLTreeNode * p)
+    static AVLTreeNode * rotate_right(AVLTreeNode * p)
     {
         AVLTreeNode * q = p->left;
         p->left = q->right;
@@ -105,7 +104,7 @@ class BattleWithYouKnowWho
         return q;
     }
 
-    AVLTreeNode * rotate_left(AVLTreeNode * q)
+    static AVLTreeNode * rotate_left(AVLTreeNode * q)
     {
         AVLTreeNode * p = q->right;
         q->right = p->left;
@@ -117,7 +116,7 @@ class BattleWithYouKnowWho
         return p;
     }
 
-    AVLTreeNode * balance(AVLTreeNode * p)
+    static AVLTreeNode * balance(AVLTreeNode * p)
     {
         fix_height(p);
 
@@ -141,7 +140,7 @@ class BattleWithYouKnowWho
     }
 
 
-    AVLTreeNode * insert(AVLTreeNode * p, int key)
+    static AVLTreeNode * insert(AVLTreeNode * p, int key)
     {
         if( !p )
             return new AVLTreeNode(key);
@@ -155,7 +154,7 @@ class BattleWithYouKnowWho
         return balance(p);
     }
 
-    void delete_node(AVLTreeNode * p)
+    static void delete_node(AVLTreeNode * p)
     {
         if (p != NULL)
         {
