@@ -56,8 +56,7 @@ public class REPLConsole {
                 final String userInput = text.substring(startIndex);
 
                 Parser parser = new Parser(userInput);
-                final Exp exp = parser.parse();
-                document.removeUndoableEditListener(undoListener);
+                final Exp exp = parser.parse();                
                 if (exp == null) {
                     SwingUtilities.invokeLater(new Task() {
                         @Override
