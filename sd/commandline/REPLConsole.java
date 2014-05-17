@@ -56,7 +56,8 @@ public class REPLConsole {
                 final String userInput = text.substring(startIndex);
 
                 Parser parser = new Parser(userInput);
-                final Exp exp = parser.parse();                
+                final Exp exp = parser.parse();
+                document.removeUndoableEditListener(undoListener);
                 if (exp == null) {
                     SwingUtilities.invokeLater(new Task() {
                         @Override
@@ -146,7 +147,7 @@ public class REPLConsole {
                     }
                 }
         );
-        
+        undoListener.discardAllEdits();
         textArea.getKeymap().addActionForKeyStroke(
                 KeyStroke.getKeyStroke("control shift Z"),
                 new AbstractAction() {
@@ -154,19 +155,15 @@ public class REPLConsole {
                     public void actionPerformed(ActionEvent e) {
                         Action last = actionList.getLastState();
                         optionPane.setSelectedIndex(last.simplify ? 0 : 1);
-                        removeLines();
+                        removeLastExpression();
                     }
 
-                    private void removeLines() {
+                    private void removeLastExpression() {
                         try {
                             String text = document.getText(0, document.getLength());
-                            int prevToLastLineIndex = text.lastIndexOf(System.lineSeparator());
-                            text = text.substring(0, prevToLastLineIndex);
-                            int indexToTrim = text.lastIndexOf('>') + 1;
-
-                            document.setDocumentFilter(null);
-                            document.remove(indexToTrim, document.getLength() - indexToTrim);
-
+                            text = text.substring(0, text.lastIndexOf(System.lineSeparator()));
+                            int startIndex = text.lastIndexOf('>') + 1;
+                            document.remove(startIndex, document.getLength() - startIndex);
                         } catch (BadLocationException e1) {
                         }
                     }

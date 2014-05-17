@@ -20,7 +20,6 @@ public class Parser {
     public Exp parse() {
         Exp exp = parseExpression();
         if (lexer.getCurrentToken().tokenType != Token.Type.EOF) {
-            System.out.println(lexer.getCurrentToken().tokenType);
             return null;
         }
         return exp;
