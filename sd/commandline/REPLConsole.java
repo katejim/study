@@ -154,8 +154,10 @@ public class REPLConsole {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         Action last = actionList.getLastState();
-                        optionPane.setSelectedIndex(last.simplify ? 0 : 1);
-                        removeLastExpression();
+                        if (last != null){
+                            optionPane.setSelectedIndex(last.simplify ? 0 : 1);
+                            removeLastExpression();
+                        }
                     }
 
                     private void removeLastExpression() {
