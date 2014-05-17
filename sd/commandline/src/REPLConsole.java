@@ -146,7 +146,7 @@ public class REPLConsole {
                     }
                 }
         );
-        undoListener.discardAllEdits();
+        
         textArea.getKeymap().addActionForKeyStroke(
                 KeyStroke.getKeyStroke("control shift Z"),
                 new AbstractAction() {
