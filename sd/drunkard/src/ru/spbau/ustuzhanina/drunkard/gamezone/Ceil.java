@@ -20,7 +20,8 @@ public class Ceil {
     }
 
     public Boolean isEmpty(){
-        return this.getGameObjects().getCeilObject() == Constant.Actors.NO;
+        return !(getGameObjects()  instanceof EmptyObject);
+
     }
 
     public void setGameObjects(GameObjects gameObjects) {

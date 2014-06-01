@@ -8,9 +8,11 @@ import ru.spbau.ustuzhanina.drunkard.gamezone.Coordinates;
  */
 public class Bottle extends GameObjects {
     public Bottle(Coordinates position) {
-        super.setState(Constant.CeilState.BUSY_CEIL);
-        super.setCeilObject(Constant.Actors.BOTTLE);
-        super.setSymbolToPrint(Constant.Symbols.BOTTLE_CEIL_SYMBOL.symbol);
         super.setPosition(position);
+    }
+
+    @Override
+    public String symbol() {
+        return "B";
     }
 }

@@ -19,7 +19,7 @@ public class Bar extends GameObjects implements IActiveObj {
     }
 
     @Override
-    public Boolean doSomething() {
+    public Boolean makeTurn() {
         steps++;
         if (steps == Constant.NEW_DRUNKARD_FREQUENCY) {
             steps = 0;

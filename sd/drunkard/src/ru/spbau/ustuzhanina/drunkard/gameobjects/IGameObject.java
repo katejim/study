@@ -7,23 +7,7 @@ import ru.spbau.ustuzhanina.drunkard.gamezone.Coordinates;
  * Created by KateKate on 01.05.14.
  */
 public interface IGameObject {
-    public boolean isEmpty();
-
-    public void setState(Constant.CeilState state);
-
-    public String getSymbolToPrint();
-
-    public void setSymbolToPrint(String symbolToPrint);
-
-    public Constant.Actors getCeilObject();
-
-    public void setCeilObject(Constant.Actors actor);
-
+    public String symbol();
     public Coordinates getPosition();
-
     public void setPosition(Coordinates position);
-
-    public Constant.ActiveState getActiveState();
-
-    public void setActiveState(Constant.ActiveState state);
 }

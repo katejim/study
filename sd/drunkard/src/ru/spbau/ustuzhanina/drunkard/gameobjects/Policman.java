@@ -9,46 +9,35 @@ import ru.spbau.ustuzhanina.drunkard.PathFind;
  * Created by KateKate on 02.05.14.
  */
 public class Policman extends GameObjects implements IActiveObj {
-    Field field;
-    Coordinates curPosition;
-    Boolean find;
-    Boolean withDrunkard;
+    private Field field;
+    private Boolean find;
+    private Boolean withDrunkard;
+    private PolicmanState state = PolicmanState.READY_POLICEMEN;
 
     public Policman(Field field) {
         withDrunkard = false;
-        setState(Constant.CeilState.BUSY_CEIL);
-        setCeilObject(Constant.Actors.POLICE);
-        setSymbolToPrint(Constant.Symbols.POLICE_CEIL_SYMBOL.symbol);
         setPosition(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos);
         this.field = field;
-        setActiveState(Constant.ActiveState.READY_POLICEMEN);
-        curPosition = Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos;
         find = false;
     }
 
-
     @Override
-    public Boolean doSomething() {
+    public Boolean makeTurn() {
         PathFind pfa = new PathFind(field);
-        if (getActiveState() == Constant.ActiveState.WALKING_POLICMEN) {
+        if (state == PolicmanState.WALKING_POLICMEN) {
             if (!find) {
-
                 Coordinates wishPosition = getSleepLayPosition();
-                if ((wishPosition != null) && (curPosition != null)) {
-                    Coordinates newPosition = pfa.getNextCoordinates(curPosition, wishPosition);
+                if ((wishPosition != null) && (getPosition() != null)) {
+                    Coordinates newPosition = pfa.getNextCoordinates(getPosition(), wishPosition);
                     if (newPosition == null)
                         return true;
                     if (!newPosition.equals(wishPosition)) {
                         if (field.isCeilAvailable(newPosition)) {
-                            field.delObject(curPosition);
-                            field.setObject(newPosition, this);
-                            curPosition = newPosition;
+                            field.moveObject(getPosition(), newPosition, this);
                         }
                         return true;
                     } else {
-                        field.setObject(newPosition, this);
-                        field.delObject(curPosition);
-                        curPosition = newPosition;
+                        field.moveObject(getPosition(), newPosition, this);
                         find = true;
                         setWithDrunkard(true);
                         return true;
@@ -57,16 +46,14 @@ public class Policman extends GameObjects implements IActiveObj {
             }
 
             if (find) {
-                if (curPosition.equals(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos)) {
+                if (getPosition().equals(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos)) {
                     find = false;
                     return true;
                 }
-                Coordinates newPosition = pfa.getNextCoordinates(curPosition, Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos);
+                Coordinates newPosition = pfa.getNextCoordinates(getPosition(), Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos);
                 if (newPosition != null) {
                     if (field.isCeilAvailable(newPosition)) {
-                        field.delObject(curPosition);
-                        field.setObject(newPosition, this);
-                        curPosition = newPosition;
+                        field.moveObject(getPosition(), newPosition, this);
                     }
                 }
             }
@@ -86,13 +73,11 @@ public class Policman extends GameObjects implements IActiveObj {
     }
 
     public Boolean checkIfSleepLay(Coordinates position) {
-        if ((field.getCeil(position).getGameObjects().getCeilObject() == Constant.Actors.DRUNKARD) &&
-                ((field.getCeil(position).getGameObjects().getActiveState() == Constant.ActiveState.SLEEP_DRUNKARD) ||
-                        (field.getCeil(position).getGameObjects().getActiveState() == Constant.ActiveState.LAY_DRUNKARD))) {
-            return true;
-        } else {
-            return false;
+        if (field.getCeil(position).getGameObjects()  instanceof Drunkard ){
+            Drunkard drunkard = (Drunkard) field.getCeil(position).getGameObjects();
+            return  drunkard.getState();
         }
+        return false;
     }
 
     public Boolean getWithDrunkard() {
@@ -100,5 +85,22 @@ public class Policman extends GameObjects implements IActiveObj {
     }
     public void setWithDrunkard(Boolean withDrunkard) {
         this.withDrunkard = withDrunkard;
+    }
+
+    @Override
+    public String symbol() {
+        return "P";
+    }
+
+    enum PolicmanState{
+        READY_POLICEMEN ,WALKING_POLICMEN;
+    }
+
+    public PolicmanState getState() {
+        return state;
+    }
+
+    public void setState(PolicmanState state) {
+        this.state = state;
     }
 }

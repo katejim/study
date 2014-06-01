@@ -20,25 +20,25 @@ public class GlassJarHouse extends GameObjects implements IActiveObj {
     }
 
     @Override
-    public Boolean doSomething() {
-        if ((beggar.getWithBottle() == true) && (beggar.curPosition.equals(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos))) {
-            beggar.setActiveState(Constant.ActiveState.DRUNKING_BEGGAR);
+    public Boolean makeTurn() {
+        if ((beggar.getWithBottle() == true) && (beggar.getPosition().equals(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos))) {
+            beggar.setState(Beggar.BeggarState.DRUNKING_BEGGAR);
             game.field.delObject(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos);
             game.addNoActiveObj(beggar);
             beggar.setWithBottle(false);
             return true;
         }
-        if ((beggar.getActiveState() == Constant.ActiveState.DRUNKING_BEGGAR) && (timer < 30)) {
+        if ((beggar.getState() == Beggar.BeggarState.DRUNKING_BEGGAR) && (timer < 30)) {
             timer++;
             return true;
         }
-        if ((beggar.getActiveState() == Constant.ActiveState.DRUNKING_BEGGAR) && (timer == 30)) {
-            beggar.setActiveState(Constant.ActiveState.READY_BEGGAR);
+        if ((beggar.getState() == Beggar.BeggarState.DRUNKING_BEGGAR) && (timer == 30)) {
+            beggar.setState(Beggar.BeggarState.READY_BEGGAR);
             timer = 0;
         }
-        if ((beggar.getBottlePosition() != null) && (beggar.getActiveState() == Constant.ActiveState.READY_BEGGAR)) {
+        if ((beggar.getBottlePosition() != null) && (beggar.getState() == Beggar.BeggarState.READY_BEGGAR)) {
             game.addActiveObj(beggar);
-            beggar.setActiveState(Constant.ActiveState.WALKING_BEGGAR);
+            beggar.setState(Beggar.BeggarState.WALKING_BEGGAR);
             field.setObject(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos, beggar);
         }
         return true;

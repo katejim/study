@@ -11,30 +11,30 @@ import ru.spbau.ustuzhanina.drunkard.PathFind;
 public class Beggar extends GameObjects implements IActiveObj {
     private Boolean withBottle;
     private Boolean find;
-    Coordinates curPosition;
     private Field field;
+    private BeggarState state = BeggarState.READY_BEGGAR;
 
     public Beggar(Field field) {
         this.field = field;
         withBottle = false;
-        setState(Constant.CeilState.BUSY_CEIL);
-        setCeilObject(Constant.Actors.BEGGAR);
-        setSymbolToPrint(Constant.Symbols.BEGGAR_CEIL_SYMBOL.symbol);
         setPosition(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos);
-        setActiveState(Constant.ActiveState.READY_BEGGAR);
-        curPosition = Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos;
         find = false;
     }
 
     public Coordinates getBottlePosition() {
         for (int i = 0; i != Constant.FIELD_HEIGHT; i++) {
             for (int j = 0; j != Constant.FIELD_WIDTH; j++) {
-                if (field.getCeil(new Coordinates(j, i)).getGameObjects().getCeilObject() == Constant.Actors.BOTTLE) {
+                if (field.getCeil(new Coordinates(j, i)).getGameObjects() instanceof Bottle) {
                     return new Coordinates(j, i);
                 }
             }
         }
         return null;
+    }
+
+    @Override
+    public String symbol() {
+        return "z";
     }
 
     public Boolean getWithBottle() {
@@ -46,25 +46,21 @@ public class Beggar extends GameObjects implements IActiveObj {
     }
 
     @Override
-    public Boolean doSomething() {
+    public Boolean makeTurn() {
         PathFind pfa = new PathFind(field);
         if (!find) {
             Coordinates wishPosition = getBottlePosition();
-            if ((wishPosition != null) && (curPosition != null)) {
-                Coordinates newPosition = pfa.getNextCoordinates(curPosition, wishPosition);
+            if ((wishPosition != null) && (getPosition() != null)) {
+                Coordinates newPosition = pfa.getNextCoordinates(getPosition(), wishPosition);
                 if (newPosition == null)
                     return true;
                 if (!newPosition.equals(wishPosition)) {
                     if (field.isCeilAvailable(newPosition)) {
-                        field.delObject(curPosition);
-                        field.setObject(newPosition, this);
-                        curPosition = newPosition;
+                        field.moveObject(getPosition(), newPosition, this);
                     }
                     return true;
                 } else {
-                    field.setObject(newPosition, this);
-                    field.delObject(curPosition);
-                    curPosition = newPosition;
+                    field.moveObject(getPosition(), newPosition, this);
                     find = true;
                     setWithBottle(true);
                     return true;
@@ -73,19 +69,29 @@ public class Beggar extends GameObjects implements IActiveObj {
         }
 
         if (find) {
-            if (curPosition.equals(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos)) {
+            if (getPosition().equals(Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos)) {
                 find = false;
                 return true;
             }
-            Coordinates newPosition = pfa.getNextCoordinates(curPosition, Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos);
+            Coordinates newPosition = pfa.getNextCoordinates(getPosition(), Constant.InitialPos.BEGGAR_INITIAL_POSITION.pos);
             if (newPosition != null) {
                 if (field.isCeilAvailable(newPosition)) {
-                    field.delObject(curPosition);
-                    field.setObject(newPosition, this);
-                    curPosition = newPosition;
+                    field.moveObject(getPosition(), newPosition, this);
                 }
             }
         }
         return true;
+    }
+
+    public BeggarState getState() {
+        return state;
+    }
+
+    public void setState(BeggarState state) {
+        this.state = state;
+    }
+
+    enum BeggarState{
+        READY_BEGGAR , WALKING_BEGGAR ,  DRUNKING_BEGGAR
     }
 }

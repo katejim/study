@@ -5,6 +5,7 @@ import ru.spbau.ustuzhanina.drunkard.gameobjects.IActiveObj;
 import ru.spbau.ustuzhanina.drunkard.gameobjects.IStaticObj;
 import ru.spbau.ustuzhanina.drunkard.gameobjects.Lantern;
 import ru.spbau.ustuzhanina.drunkard.gamezone.Field;
+import ru.spbau.ustuzhanina.drunkard.gamezone.HexagonalField;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,12 @@ public class Game {
     public List<IActiveObj> nonActiveObj;
 
 
-    Game() {
-        field = new Field();
+    Game(boolean mode) {
+        if (mode) {
+            field = new HexagonalField();
+        } else {
+            field = new Field();
+        }
         activeObj = new ArrayList<IActiveObj>();
         newObj = new ArrayList<IActiveObj>();
         nonActiveObj = new ArrayList<IActiveObj>();
@@ -33,7 +38,7 @@ public class Game {
         nonActiveObj.clear();
 
         for (IActiveObj obj : activeObj) {
-            if (!obj.doSomething()) {
+            if (!obj.makeTurn()) {
                 nonActiveObj.add(obj);
             }
             field.printFieldState();
@@ -42,9 +47,10 @@ public class Game {
         for (IActiveObj obj : nonActiveObj) {
             activeObj.remove(obj);
         }
+        System.out.println();
     }
 
-    public  void registerAllStaticObj(){
+    public void registerAllStaticObj() {
         Column column = new Column();
         Lantern lantern = new Lantern();
         List<IStaticObj> staticObjList = new ArrayList<IStaticObj>();
@@ -59,6 +65,7 @@ public class Game {
     public void addActiveObj(IActiveObj activeObj1) {
         newObj.add(activeObj1);
     }
+
     public void addNoActiveObj(IActiveObj activeObj1) {
         nonActiveObj.add(activeObj1);
     }

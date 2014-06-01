@@ -4,27 +4,26 @@ import ru.spbau.ustuzhanina.drunkard.Constant;
 import ru.spbau.ustuzhanina.drunkard.gamezone.Coordinates;
 import ru.spbau.ustuzhanina.drunkard.gamezone.Field;
 
+import java.util.List;
+
 /**
  * Created by KateKate on 01.03.14.
  */
 public class Drunkard extends GameObjects implements IActiveObj {
     private boolean withBottle;
-    private  Field field;
+    private Field field;
+    private DrunkardState state = DrunkardState.READY_DRUNKARD;
 
     public Drunkard(Field field) {
-        setState(Constant.CeilState.BUSY_CEIL);
-        setCeilObject(Constant.Actors.DRUNKARD);
-        setSymbolToPrint(Constant.Symbols.DRUNKARD_CEIL_SYMBOL.symbol);
         setPosition(Constant.InitialPos.DRUNCARD_INITIAL_POSITION.pos);
         this.field = field;
-        setActiveState(Constant.ActiveState.READY_DRUNKARD);
         withBottle = true;
     }
 
 
     @Override
-    public Boolean doSomething() {
-        if (getActiveState() != Constant.ActiveState.READY_DRUNKARD){
+    public Boolean makeTurn() {
+        if (state != DrunkardState.READY_DRUNKARD) {
             return false;
         }
         Coordinates newPosition = generateNewPositioin();
@@ -36,18 +35,28 @@ public class Drunkard extends GameObjects implements IActiveObj {
         } else {
             if (!field.isWallBorder(newPosition)) {
                 if (isBottleHere(newPosition)) {
-                    setActiveState(Constant.ActiveState.LAY_DRUNKARD);
-                    setSymbolToPrint(Constant.Symbols.DRUNKARD_LAY_CEIL_SYMBOL.symbol);
+                    state = DrunkardState.LAY_DRUNKARD;
                 } else if (isColumnHere(newPosition)) {
-                    setActiveState(Constant.ActiveState.SLEEP_DRUNKARD);
-                    setSymbolToPrint(Constant.Symbols.DRUNKARD_SLEEP_CEIL_SYMBOL.symbol);
+                    state = DrunkardState.SLEEP_DRUNKARD;
                 } else if (isSleepDrunkurdHere(newPosition)) {
-                    setActiveState(Constant.ActiveState.SLEEP_DRUNKARD);
-                    setSymbolToPrint(Constant.Symbols.DRUNKARD_SLEEP_CEIL_SYMBOL.symbol);
+                    state = DrunkardState.SLEEP_DRUNKARD;
                 }
             }
         }
         return true;
+    }
+
+    @Override
+    public String symbol() {
+        switch (state) {
+            case READY_DRUNKARD:
+                return "D";
+            case SLEEP_DRUNKARD:
+                return "Z";
+            case LAY_DRUNKARD:
+                return "&";
+        }
+        return null;
     }
 
     private void handleDrunkardBottle() {
@@ -61,41 +70,58 @@ public class Drunkard extends GameObjects implements IActiveObj {
     }
 
     private Coordinates generateNewPositioin() {
-        int direction = (int) (Math.random() * 100);
-        Coordinates newPosition;
-        //down
-        if (direction < 25) {
-            newPosition = new Coordinates(getPosition().getX() - 1, getPosition().getY());
-            //up
-        } else if (direction < 50) {
-            newPosition = new Coordinates(getPosition().getX(), getPosition().getY() - 1);
-            //down
-        } else if (direction < 75) {
-            newPosition = new Coordinates(getPosition().getX(), getPosition().getY() + 1);
-            //right
-        } else {
-            newPosition = new Coordinates(getPosition().getX() + 1, getPosition().getY());
+        List<Coordinates> nearCeils = field.getNearCeil(getPosition());
+        int direction = (int) (Math.random() * 120);
+        int koeff = nearCeils.size() == 4 ? 30 : 20;
+
+        if (direction < koeff) {
+            return nearCeils.get(0);
+        } else if (direction < 2 * koeff) {
+            return nearCeils.get(1);
+        } else if (direction < 3 * koeff) {
+            return nearCeils.get(2);
+        } else if (direction < 4 * koeff) {
+            return nearCeils.get(3);
         }
-        return newPosition;
+        if (nearCeils.size() == 6) {
+            if (direction < 5 * koeff) {
+                return nearCeils.get(4);
+            } else {
+                return nearCeils.get(5);
+            }
+        }
+        return null;
+    }
+
+    public Boolean getState(){
+        if (state == DrunkardState.LAY_DRUNKARD || state == DrunkardState.SLEEP_DRUNKARD){
+            return true;
+        }
+        return false;
     }
 
     private boolean isBottleHere(Coordinates position) {
-        return (field.getCeil(position).getGameObjects().getCeilObject() == Constant.Actors.BOTTLE);
+        return (field.getCeil(position).getGameObjects() instanceof Bottle);
     }
 
     private boolean isColumnHere(Coordinates position) {
-        return  (field.getCeil(position).getGameObjects().getCeilObject() == Constant.Actors.COLUMN);
+        return (field.getCeil(position).getGameObjects() instanceof Column);
     }
 
     private boolean isSleepDrunkurdHere(Coordinates position) {
-        return ((field.getCeil(position).getGameObjects().getCeilObject() == Constant.Actors.DRUNKARD)
-                && (this.getActiveState() == Constant.ActiveState.SLEEP_DRUNKARD));
+        return ((field.getCeil(position).getGameObjects() instanceof Drunkard)
+                && (state == DrunkardState.SLEEP_DRUNKARD));
     }
 
     public boolean isWithBottle() {
         return withBottle;
     }
+
     public void setWithBottle(boolean withBottle) {
         this.withBottle = withBottle;
+    }
+
+    public enum DrunkardState {
+        SLEEP_DRUNKARD, READY_DRUNKARD, LAY_DRUNKARD
     }
 }

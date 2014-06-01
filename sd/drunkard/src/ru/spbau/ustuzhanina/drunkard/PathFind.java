@@ -58,8 +58,7 @@ public class PathFind {
 
     public Coordinates getNextCoordinates(Coordinates from, Coordinates to) {
         boolean fl = findPath(from, to);
-
-        if ((path.size() != 0) && fl){
+        if ((path.size() != 0) && fl) {
             return path.removeLast();
         } else return null;
     }
@@ -68,32 +67,16 @@ public class PathFind {
     private List<Coordinates> getNearCeil(Coordinates ceil, Coordinates to) {
         List<Coordinates> rez = new ArrayList<Coordinates>();
         if (ceil != null && to != null) {
-            Coordinates newCoordinate = new Coordinates(ceil.getX() - 1, ceil.getY());
-            if (!field.isWallBorder(newCoordinate)) {
-                if (field.isCeilAvailable(new Coordinates(ceil.getX() - 1, ceil.getY())) || (new Coordinates(ceil.getX() - 1, ceil.getY()).equals(to))) {
-                    rez.add(new Coordinates(ceil.getX() - 1, ceil.getY()));
-                }
-            }
-            newCoordinate = new Coordinates(ceil.getX(), ceil.getY() - 1);
-            if (!field.isWallBorder(newCoordinate)) {
-                if (field.isCeilAvailable(new Coordinates(ceil.getX(), ceil.getY() - 1)) || (new Coordinates(ceil.getX(), ceil.getY() - 1).equals(to))) {
-                    rez.add(new Coordinates(ceil.getX(), ceil.getY() - 1));
-                }
-            }
-            newCoordinate = new Coordinates(ceil.getX() + 1, ceil.getY());
-            if (!field.isWallBorder(newCoordinate)) {
-                if (field.isCeilAvailable(new Coordinates(ceil.getX() + 1, ceil.getY())) || (new Coordinates(ceil.getX() + 1, ceil.getY()).equals(to))) {
-                    rez.add(new Coordinates(ceil.getX() + 1, ceil.getY()));
-                }
-            }
-            newCoordinate = new Coordinates(ceil.getX(), ceil.getY() + 1);
-            if (!field.isWallBorder(newCoordinate)) {
-                if (field.isCeilAvailable(new Coordinates(ceil.getX(), ceil.getY() + 1)) || (new Coordinates(ceil.getX(), ceil.getY() + 1).equals(to))) {
-                    rez.add(new Coordinates(ceil.getX(), ceil.getY() + 1));
+            for (Coordinates newCoordinate : field.getNearCeil(ceil)) {
+                if (!field.isWallBorder(newCoordinate)) {
+                    if (field.isCeilAvailable(newCoordinate) || (newCoordinate.equals(to))) {
+                        rez.add(newCoordinate);
+                    }
                 }
             }
         }
         return rez;
     }
 }
+
 

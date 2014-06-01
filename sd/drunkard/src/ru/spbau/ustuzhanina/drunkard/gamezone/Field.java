@@ -3,11 +3,14 @@ package ru.spbau.ustuzhanina.drunkard.gamezone;
 import ru.spbau.ustuzhanina.drunkard.Constant;
 import ru.spbau.ustuzhanina.drunkard.gameobjects.GameObjects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by KateKate on 01.03.14.
  */
 public class Field {
-    private Ceil[][] allCeils;
+    protected Ceil[][] allCeils;
 
     public Field() {
         allCeils = new Ceil[Constant.FIELD_WIDTH][Constant.FIELD_HEIGHT];
@@ -19,10 +22,10 @@ public class Field {
     }
 
     public void printFieldState() {
-        System.out.println("                  " + Constant.Symbols.PUB_CEIL_SYMBOL.symbol);
-        for (int i = 0; i < Constant.FIELD_WIDTH ; i++) {
-            for (int j = 0; j < Constant.FIELD_HEIGHT ; j++) {
-                System.out.print(allCeils[j][i].getGameObjects().getSymbolToPrint() + " ");
+        System.out.println();
+        for (int i = 0; i < Constant.FIELD_WIDTH; i++) {
+            for (int j = 0; j < Constant.FIELD_HEIGHT; j++) {
+                System.out.print(allCeils[j][i].getGameObjects().symbol() + " ");
             }
             System.out.println();
         }
@@ -41,9 +44,18 @@ public class Field {
         return allCeils[position.getX()][position.getY()];
     }
 
+
+    public List<Coordinates> getNearCeil(Coordinates position){
+        List <Coordinates> result = new ArrayList<Coordinates>();
+        result.add(new Coordinates(position.getX() +1, position.getY()));
+        result.add(new Coordinates(position.getX() -1, position.getY()));
+        result.add(new Coordinates(position.getX(),position.getY() + 1));
+        result.add(new Coordinates(position.getX(),position.getY() - 1));
+        return  result;
+    }
     public boolean isCeilAvailable(Coordinates position) {
         if (!isWallBorder(position)) {
-            if (!allCeils[position.getX()][position.getY()].getGameObjects().isEmpty()) {
+            if (!allCeils[position.getX()][position.getY()].isEmpty()) {
                 return true;
             } else {
                 return false;
@@ -56,8 +68,13 @@ public class Field {
         if ((position.getX() < 0) || (position.getX() >= Constant.FIELD_WIDTH)
                 || (position.getY() < 0) || (position.getY() >= Constant.FIELD_HEIGHT)) {
             return true;
-        } else {
-            return false;
         }
+        return false;
+    }
+
+    public void moveObject(Coordinates oldPosition, Coordinates newPosition, GameObjects obj){
+        delObject(oldPosition);
+        setObject(newPosition, obj);
+        obj.setPosition(newPosition);
     }
 }

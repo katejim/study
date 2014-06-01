@@ -8,9 +8,9 @@ import ru.spbau.ustuzhanina.drunkard.gamezone.Field;
  * Created by KateKate on 02.05.14.
  */
 public class PoliceStation extends GameObjects implements IActiveObj {
-    Game game;
-    Field field;
-    Policman policman;
+    private final Game game;
+    private Field field;
+    private final Policman policman;
 
     public PoliceStation(Game game) {
         this.game = game;
@@ -19,20 +19,19 @@ public class PoliceStation extends GameObjects implements IActiveObj {
     }
 
     @Override
-    public Boolean doSomething() {
-        if (policman.curPosition.equals(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos) && (policman.getWithDrunkard() == true)) {
-            policman.setActiveState(Constant.ActiveState.READY_POLICEMEN);
+    public Boolean makeTurn() {
+        if (policman.getPosition().equals(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos) && (policman.getWithDrunkard() == true)) {
+            policman.setState(Policman.PolicmanState.READY_POLICEMEN);
             game.field.delObject(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos);
             game.addNoActiveObj(policman);
             policman.setWithDrunkard(false);
             return true;
         }
-        if ((policman.getSleepLayPosition() != null) && (policman.getActiveState() == Constant.ActiveState.READY_POLICEMEN && field.isCeilAvailable(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos))) {
-            if (field.getCeil(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos).isEmpty()) {
-                game.addActiveObj(policman);
-                policman.setActiveState(Constant.ActiveState.WALKING_POLICMEN);
-                field.setObject(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos, policman);
-            }
+        if ((policman.getSleepLayPosition() != null) && (policman.getState() == Policman.PolicmanState.READY_POLICEMEN
+                && field.isCeilAvailable(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos))) {
+            game.addActiveObj(policman);
+            policman.setState(Policman.PolicmanState.WALKING_POLICMEN);
+            field.setObject(Constant.InitialPos.POLICEMEN_INITIAL_POSITION.pos, policman);
         }
         return true;
     }

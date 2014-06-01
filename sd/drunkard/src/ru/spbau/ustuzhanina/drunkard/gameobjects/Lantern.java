@@ -9,10 +9,12 @@ import ru.spbau.ustuzhanina.drunkard.gamezone.Field;
 public class Lantern extends GameObjects implements IStaticObj {
     @Override
     public void registerStatObj(Field field) {
-        super.setState(Constant.CeilState.BUSY_CEIL);
-        super.setCeilObject(Constant.Actors.LANTERN);
-        super.setSymbolToPrint(Constant.Symbols.LANTERN_CEIL_SYMBOL.symbol);
         super.setPosition(Constant.InitialPos.LANTERN_POSITION.pos);
         field.setObject(this.getPosition(), this);
+    }
+
+    @Override
+    public String symbol() {
+        return "L";
     }
 }
