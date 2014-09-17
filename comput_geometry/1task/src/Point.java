@@ -2,25 +2,22 @@
  * Created by kate on 16.09.14.
  */
 public class Point {
-    private final int x;
-    private final int y;
+    private final long x;
+    private final long y;
 
-    public Point(int x, int y) {
+    public Point(long x, long y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public long getX() {
         return x;
     }
 
-    public int getY() {
+    public long getY() {
         return y;
     }
 
-    public Point sum(Point fst, Point snd) {
-        return new Point(fst.x + fst.x, snd.y + snd.y);
-    }
 
     public Point sub(Point fst, Point snd) {
         return new Point(snd.x - fst.x, snd.y - fst.y);
@@ -46,14 +43,14 @@ public class Point {
         Point a = sub(begin, end);
         Point b = sub(begin, current);
 
-        double sa = a.x * b.y - b.x * a.y;
+        long sa = a.x * b.y - b.x * a.y;
         if (sa > 0) {
             return ORIENTATION.LEFT;
         }
         if (sa < 0) {
             return ORIENTATION.RIGHT;
         }
-        if ((a.x * b.x < 0.0) || (a.y * b.y < 0.0)) {
+        if ((a.x * b.x < 0) || (a.y * b.y < 0)) {
             return ORIENTATION.BEHIND;
         }
         if (a.length() < b.length()) {
@@ -69,6 +66,6 @@ public class Point {
     }
 
     public void show() {
-        System.out.println(x + " " + y);
+        System.out.print(x + " " + y);
     }
 }

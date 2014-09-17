@@ -35,10 +35,13 @@ public class Algo {
         for (int i = 0; i < polygon.size(); i++) {
             Edge e = polygon.getEdge();
             switch (edgeType(point, e)) {
-                case TOUCHING:
+                case TOUCHING: {
                     return POINTLOCALIZATION.yes.toString();
-                case CROSSING:
+                }
+                case CROSSING: {
                     parity = 1 - parity;
+                }
+
             }
         }
         return (parity != 0 ? POINTLOCALIZATION.yes.toString() : POINTLOCALIZATION.no.toString());

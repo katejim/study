@@ -18,21 +18,10 @@ public class Edge {
         return end;
     }
 
-//    int edgeType (Point &a, Edge &e)
-//    {
-//        Point v = e.org;
-//        Point w = e.dest;
-//        switch (a.classify(e)) {
-//            case LEFT:
-//                return ((v.y<a.y)&&(a.y<=w.y)) ? CROSSING : INESSENTIAL;
-//            case RIGHT:
-//                return ((w.y<a.y)&&(a.y<=v.y)) ? CROSSING : INESSENTIAL;
-//            case BETWEEN:
-//            case ORIGIN:
-//            case DESTINATION:
-//                return TOUCHING;
-//            default:
-//                return INESSENTIAL;
-//        }
-//    }
+    public void show(){
+        begin.show();
+        System.out.print("   ");
+        end.show();
+        System.out.println();
+    }
 }
