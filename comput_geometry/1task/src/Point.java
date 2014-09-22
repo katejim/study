@@ -2,19 +2,19 @@
  * Created by kate on 16.09.14.
  */
 public class Point {
-    private final long x;
-    private final long y;
+    private final int x;
+    private final int y;
 
-    public Point(long x, long y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public long getX() {
+    public int getX() {
         return x;
     }
 
-    public long getY() {
+    public int getY() {
         return y;
     }
 
@@ -43,7 +43,8 @@ public class Point {
         Point a = sub(begin, end);
         Point b = sub(begin, current);
 
-        long sa = a.x * b.y - b.x * a.y;
+        long sa = ((long) a.x) * b.y - ((long)(b.x)) * a.y;
+
         if (sa > 0) {
             return ORIENTATION.LEFT;
         }

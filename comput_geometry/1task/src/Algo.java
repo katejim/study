@@ -41,7 +41,6 @@ public class Algo {
                 case CROSSING: {
                     parity = 1 - parity;
                 }
-
             }
         }
         return (parity != 0 ? POINTLOCALIZATION.yes.toString() : POINTLOCALIZATION.no.toString());

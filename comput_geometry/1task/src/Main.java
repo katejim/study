@@ -20,7 +20,7 @@ public class Main {
         for (int i = 0; i < checkVertexCount; i++) {
             answers.add(algo.pointInPolygon(getPoint(scanner.nextLine())));
         }
-        for (int i = 0; i < checkVertexCount; i++){
+        for (int i = 0; i < checkVertexCount; i++) {
             System.out.println(answers.get(i));
         }
     }
