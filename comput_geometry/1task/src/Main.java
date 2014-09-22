@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int polyVertexCount = Integer.parseInt(scanner.nextLine());
         Polygon polygon = new Polygon();
         for (int i = 0; i < polyVertexCount; i++) {
@@ -20,6 +21,7 @@ public class Main {
         for (int i = 0; i < checkVertexCount; i++) {
             answers.add(algo.pointInPolygon(getPoint(scanner.nextLine())));
         }
+
         for (int i = 0; i < checkVertexCount; i++) {
             System.out.println(answers.get(i));
         }
