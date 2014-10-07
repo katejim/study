@@ -16,10 +16,6 @@ object Task4 extends App {
       (for (x <- set1; y <- set2) yield x - y)
 
 
-  def connect(range1: (Int, Int), range2: (Int, Int)): Set[Int] =
-    connectSets(dictGLOBAL(range1), dictGLOBAL(range2))
-
-
   def solver(range: (Int, Int)): Unit = {
     if (!(dictGLOBAL contains range)) {
       if (range._2 - range._1 < 1) {
@@ -30,7 +26,7 @@ object Task4 extends App {
         for ((left, right) <- partitions) {
           solver(left)
           solver(right)
-          listOfSubintervals = listOfSubintervals :+ connect(left, right)
+          listOfSubintervals = listOfSubintervals :+ connectSets(dictGLOBAL(left), dictGLOBAL(right))
         }
         dictGLOBAL += (range -> listOfSubintervals.reduceRight(_ ++ _))
       }
