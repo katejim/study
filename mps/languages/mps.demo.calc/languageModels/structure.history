@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="pdzl" modelUID="r:190cae48-dd98-4a2f-b386-673ed438f048(mps.demo.calc.structure)" version="-1" />
+    </dependencies>
+    <rename id="pdzl.326863249127611012" type="CONCEPT" to="Calculator" />
+  </StructureModification>
+</history>
+

@@ -20,6 +20,7 @@ def createBinaryImg(inImg):
     grayImg = cv2.cvtColor(blurImg, cv2.COLOR_BGR2GRAY, 1)
 
     laplacian = cv2.Laplacian(grayImg, cv2.CV_32F)
+    laplacian = laplacian.clip(0.0)
     return laplacian
 
 def readImg(name):
@@ -28,7 +29,6 @@ def readImg(name):
 
 inImg = readImg("text.bmp")
 binImg = createBinaryImg(inImg)
-saveBinImg(binImg)
 showImg("RESULT", binImg)
 
 

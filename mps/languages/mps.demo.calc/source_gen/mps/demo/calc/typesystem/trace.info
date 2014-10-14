@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="mps.demo.calc.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:3df64659-b0d2-4f00-8e4e-3857153b5d56(mps.demo.calc.typesystem)/326863249127900973">
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="19" startPosition="46" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="25" startPosition="130" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UserFunction_InferenceRule#()V" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="13" startPosition="46" endLine="13" endPosition="46" />
+    <scopeInfo nodeId="326863249127900974" fileName="typeof_UserFunction_InferenceRule.java" startLine="16" startPosition="125" endLine="16" endPosition="125" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="19" startPosition="46" endLine="20" endPosition="50" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="326863249127900973" varName="status" />
+      <varInfo nodeId="326863249127900973" varName="typeCheckingContext" />
+      <varInfo nodeId="326863249127900973" varName="userFunction" />
+    </scopeInfo>
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="24" startPosition="5" endLine="26" endPosition="45">
+      <varInfo nodeId="326863249127900973" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="326863249127900973" varName="argument" />
+    </scopeInfo>
+    <unitInfo nodeId="326863249127900973" fileName="typeof_UserFunction_InferenceRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="mps.demo.calc.typesystem.typeof_UserFunction_InferenceRule" />
+  </root>
+</debugInfo>
+

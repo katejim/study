@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="mps.demo.calc.editor.EditorAspectDescriptorImpl" />
+  <root nodeRef="r:5295819b-9f8a-459d-a79b-2c4e6fb35fc1(mps.demo.calc.editor)/326863249127939501">
+    <nodeInfo nodeId="326863249127939501" fileName="UserFunction_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="17" startPosition="117" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="19" startPosition="28" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="20" startPosition="34" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="326863249127939501" fileName="UserFunction_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_t7aptg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="326863249127939501" fileName="UserFunction_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
+    <scopeInfo nodeId="326863249127939501" fileName="UserFunction_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="326863249127939501" varName="editorContext" />
+      <varInfo nodeId="326863249127939501" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="16" startPosition="87" endLine="21" endPosition="22">
+      <varInfo nodeId="326863249127956650" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="326863249127956650" fileName="UserFunction_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="326863249127956650" varName="editorContext" />
+      <varInfo nodeId="326863249127956650" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="326863249127939501" fileName="UserFunction_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="mps.demo.calc.editor.UserFunction_Editor" />
+  </root>
+</debugInfo>
+

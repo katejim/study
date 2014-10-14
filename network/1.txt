@@ -1,0 +1,27 @@
+1.
+wireshark + quartz
+capture -> capture filters -> create new filter with
+
+Filter name: ICMP (any name)
+Filter strnig: icmp.type==0 or icmp.type==8
+
+2. 
+virtual box поставить
+включить с помощью 
+vagrant up (поставить его сначала)
+vagrant ssh - подключаемся по shh к виртуалке
+sudo python -m SimpleHTTPServer 80  - запустить например программу принудительно на каком-то сервере
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8083 -j DNAT --to 172.28.128.3:80 - правильно для перенаправления 
+
+-t - task
+-A - add task
+-p  - protocol
+—-dport - destination port
+-j - job (что сделать дальше)
+172.28.128.3:80 - перенаправляем на свой ip на 80 порт
+
+3.
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.0.1 
+
+теперь порт можно в айпишнике не указывать так как на тот же отправляем
