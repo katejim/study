@@ -1,9 +1,0 @@
-ttemp/include
-ttemp/libs/AsmJit
-ttemp/vm
-vm/test/include
-vm/test/libs/AsmJit
-vm/test/vm
-vm/trunk/include
-vm/trunk/libs/AsmJit
-vm/trunk/vm
