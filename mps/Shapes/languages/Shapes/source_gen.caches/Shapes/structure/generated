@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-achs14ljinfmty6bqehvxzy11ahwiao">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
+  <common hash="-b3aicht9sj2rdec01uzmxvvvhr3ouxo" dependsOnNodes="true">
+    <dep root="3059905756948444116" />
+    <dep root="5926427491171409567" />
+    <dep root="5926427491171641753" />
+    <dep root="5926427491171917244" />
+    <dep root="5926427491171917277" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="5926427491171409567" name="Shape" hash="-7bi0ptobolep5e9izwh95yeyohu2847" />
+  <source id="5926427491171641753" name="Circle" hash="-7u1bc7umxrbr9nyh2rbpj4di5k63lmx" />
+  <source id="5926427491171917244" name="Square" hash="-5xdcuqm2v8q48e7dvr7le81pbx1wqwx" />
+  <source id="5926427491171917277" name="Canvas" hash="5ufagh22er6mle13jc0fomldsxx25u1" />
+  <source id="3059905756948444116" name="ColorReference" hash="7dnr7r7ilrjirvf6yvsn89ryag7hkkb" />
+</dependencies>
+

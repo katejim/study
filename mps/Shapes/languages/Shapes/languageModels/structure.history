@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="joqa" modelUID="r:9f2a9636-bd32-4f06-bf1a-34edc0dea12f(Shapes.structure)" version="-1" />
+    </dependencies>
+    <rename id="joqa.5926427491171675188" type="PROPERTY" from="z" to="radius" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="joqa" modelUID="r:9f2a9636-bd32-4f06-bf1a-34edc0dea12f(Shapes.structure)" version="0" />
+    </dependencies>
+    <rename id="joqa.5926427491171917401" type="CHILD" from="sha" to="shapes" />
+  </StructureModification>
+</history>
+

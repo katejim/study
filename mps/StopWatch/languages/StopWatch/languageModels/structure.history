@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="-1" />
+    </dependencies>
+    <rename id="k090.2155112052277249676" type="CHILD" from="work" to="time" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="0" />
+    </dependencies>
+    <rename id="k090.6422299306366969191" type="PROPERTY" from="z" to="x" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="1" />
+    </dependencies>
+    <rename id="k090.6422299306367173923" type="CHILD" from="coloe" to="color" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="2" />
+    </dependencies>
+    <rename id="k090.2155112052277249676" type="CHILD" from="time" to="work" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="3" />
+    </dependencies>
+    <rename id="k090.7354481749039427867" type="PROPERTY" from="x" to="xLeft" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="4" />
+    </dependencies>
+    <rename id="k090.7354481749039427868" type="PROPERTY" from="y" to="yLeft" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="3" />
+    </dependencies>
+    <rename id="k090.6422299306366969224" type="PROPERTY" from="xSize" to="size" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="3" />
+    </dependencies>
+    <rename id="k090.6422299306366969224" type="PROPERTY" from="xSize" to="size" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="3" />
+    </dependencies>
+    <rename id="k090.6422299306366969224" type="PROPERTY" from="xSize" to="size" />
+  </StructureModification>
+</history>
+

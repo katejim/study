@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-27ehay0sumdtxeo8o5vwmnz1tj7mrt7">
+  <common hash="14qop7wgkymzx4cr5k15cvqukmmxlu0" />
+  <source id="3059905756948097409" name="FstDraw" hash="-dvcto86j9s2edlr665p728f17bhdazs">
+    <file name="FstDraw" />
+  </source>
+  <source id="3059905756948710086" name="MySecond" hash="-e7mfj3be1jjfcz8qznvngagngowi9wz">
+    <file name="MySecond" />
+  </source>
+</dependencies>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="2omsiq0d2bz56jhtybh912u94nhpq62">
+  <common hash="-4e3rz5durgn9394wk0s62afnxof53qa" />
+  <source id="6422299306366968103" name="Test" hash="-3xmvfb5gefe7nstxd8ppnpyz77vf05b">
+    <file name="Test" />
+  </source>
+  <source id="6422299306367327469" name="Rounded" hash="7zywn1p6wo45urhjgbuun908e9sv2t7">
+    <file name="Rounded" />
+  </source>
+</dependencies>
+
