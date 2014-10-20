@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("StopWatch.structure.Dial").super_("StopWatch.structure.Shape").parents("StopWatch.structure.Shape").properties("type").create();
       case 3:
-        return new ConceptDescriptorBuilder("StopWatch.structure.Shape").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "xSize", "ySize").children(new String[]{"color"}, new boolean[]{false}).abstract_().create();
+        return new ConceptDescriptorBuilder("StopWatch.structure.Shape").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "size").children(new String[]{"color"}, new boolean[]{false}).abstract_().create();
       case 4:
         return new ConceptDescriptorBuilder("StopWatch.structure.StopWatch").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"ui", "work"}, new boolean[]{false, false}).create();
       case 5:

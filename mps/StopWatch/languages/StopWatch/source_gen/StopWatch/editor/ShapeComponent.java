@@ -33,9 +33,7 @@ public class ShapeComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_owekhq_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_owekhq_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_owekhq_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_owekhq_g0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_owekhq_h0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_owekhq_i0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_owekhq_g0(editorContext, node));
     return editorCell;
   }
 
@@ -98,11 +96,11 @@ public class ShapeComponent implements ConceptEditorComponent {
 
   private EditorCell createProperty_owekhq_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("xSize");
-    provider.setNoTargetText("<no xSize>");
+    provider.setRole("size");
+    provider.setNoTargetText("<no size>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("SC_property_xSize");
+    editorCell.setCellId("SC_property_size");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -114,32 +112,7 @@ public class ShapeComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private EditorCell createConstant_owekhq_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ySize:");
-    editorCell.setCellId("Constant_owekhq_g0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_owekhq_h0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("ySize");
-    provider.setNoTargetText("<no ySize>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("SC_property_ySize");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createComponent_owekhq_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_owekhq_g0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "StopWatch.editor.ShapeColor");
     return editorCell;
   }
