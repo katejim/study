@@ -21,6 +21,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
       case 2:
         return Collections.<ConceptEditor>singletonList(new Dial_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new StopWatch_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -44,7 +46,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Dial"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Dial", "StopWatch.structure.StopWatch"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"StopWatch.editor.ShapeColor", "StopWatch.editor.ShapeComponent"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"StopWatch.structure.Shape"};
 }
