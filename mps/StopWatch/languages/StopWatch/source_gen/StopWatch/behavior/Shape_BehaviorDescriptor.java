@@ -4,7 +4,7 @@ package StopWatch.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public abstract class Shape_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class Shape_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Shape_BehaviorDescriptor() {
   }
 

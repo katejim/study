@@ -14,23 +14,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("StopWatch.structure.Buttons").super_("StopWatch.structure.Shape").parents("StopWatch.structure.Shape").properties("type").alias("buttons", "").create();
+        return new ConceptDescriptorBuilder("StopWatch.structure.Buttons").super_("StopWatch.structure.Shape").parents("StopWatch.structure.Shape").alias("buttons", "").create();
       case 1:
         return new ConceptDescriptorBuilder("StopWatch.structure.ColorReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("color").create();
       case 2:
-        return new ConceptDescriptorBuilder("StopWatch.structure.Dial").super_("StopWatch.structure.Shape").parents("StopWatch.structure.Shape").properties("type").create();
+        return new ConceptDescriptorBuilder("StopWatch.structure.Shape").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "size", "formType").children(new String[]{"color"}, new boolean[]{false}).create();
       case 3:
-        return new ConceptDescriptorBuilder("StopWatch.structure.Shape").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y", "size").children(new String[]{"color"}, new boolean[]{false}).abstract_().create();
-      case 4:
         return new ConceptDescriptorBuilder("StopWatch.structure.StopWatch").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"ui", "work"}, new boolean[]{false, false}).create();
-      case 5:
+      case 4:
         return new ConceptDescriptorBuilder("StopWatch.structure.Time").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("precision").create();
-      case 6:
-        return new ConceptDescriptorBuilder("StopWatch.structure.UI").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dial", "startButton", "stopButton"}, new boolean[]{false, false, false}).create();
+      case 5:
+        return new ConceptDescriptorBuilder("StopWatch.structure.UI").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"formStopWatch", "startButton", "stopButton"}, new boolean[]{false, false, false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Dial", "StopWatch.structure.Shape", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Shape", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
 }

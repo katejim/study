@@ -60,5 +60,35 @@
     </dependencies>
     <rename id="k090.6422299306366969224" type="PROPERTY" from="xSize" to="size" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="4" />
+    </dependencies>
+    <rename id="k090.6422299306367181688" type="CONCEPT" from="Dial" to="Form" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="5" />
+    </dependencies>
+    <rename id="k090.6422299306367181948" type="CHILD" from="dial" to="form" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="6" />
+    </dependencies>
+    <rename id="k090.1258851080236054833" type="CHILD" from="h" to="shape" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="4" />
+    </dependencies>
+    <rename id="k090.6422299306367181948" type="CHILD" from="dial" to="formSropWatch" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="5" />
+    </dependencies>
+    <rename id="k090.6422299306367181948" type="CHILD" from="formSropWatch" to="formStopWatch" />
+  </StructureModification>
 </history>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7j4y51jsi9qxcvu8xptnfs44qul42t3">
+<dependencies version="2" modelHash="-3dcn17ric8szbnyj3l9c4njoxp32a86">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:6f616880-cdf0-47b4-90e5-e35ffd0aff14(StopWatch.typesystem)" hash="1arr9qn4eeh6uct2fnszjqdnaa7hpd" />
-  <dep model="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)" hash="23pfxt699ix9nm6iebtzzutcezgxmwq" />
+  <dep model="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)" hash="-6zenv4wxd8bsruu1rylkqinz04zsrgj" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
   <common dependsOnNodes="true">

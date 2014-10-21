@@ -3,7 +3,7 @@
   <dependency className="StopWatch.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="StopWatch.behavior.Buttons_BehaviorDescriptor" />
     <classNode dependClassName="StopWatch.behavior.ColorReference_BehaviorDescriptor" />
-    <classNode dependClassName="StopWatch.behavior.Dial_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Shape_BehaviorDescriptor" />
     <classNode dependClassName="StopWatch.behavior.StopWatch_BehaviorDescriptor" />
     <classNode dependClassName="StopWatch.behavior.Time_BehaviorDescriptor" />
     <classNode dependClassName="StopWatch.behavior.UI_BehaviorDescriptor" />
@@ -23,12 +23,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="StopWatch.behavior.Dial_BehaviorDescriptor" file="Dial_BehaviorDescriptor.java">
-    <classNode dependClassName="StopWatch.behavior.Shape_BehaviorDescriptor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="StopWatch.behavior.Shape_BehaviorDescriptor" file="Shape_BehaviorDescriptor.java">

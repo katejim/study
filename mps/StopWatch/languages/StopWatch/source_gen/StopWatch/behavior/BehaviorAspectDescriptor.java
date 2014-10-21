@@ -20,14 +20,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Buttons_BehaviorDescriptor();
       case 4:
         return new Time_BehaviorDescriptor();
+      case 2:
+        return new Shape_BehaviorDescriptor();
       case 1:
         return new ColorReference_BehaviorDescriptor();
-      case 2:
-        return new Dial_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Dial", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Shape", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
 }
