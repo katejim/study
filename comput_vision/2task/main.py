@@ -1,7 +1,8 @@
-
 __author__ = 'kate'
+
 import numpy as np
 import cv2
+from copy import copy
 
 
 def showImg(name, mat):
@@ -15,8 +16,12 @@ def saveImg(name, mat):
     cv2.imwrite(name, mat)
 
 
+def saveBinImg(binImg):
+    saveImg("rezBin.bmp", binImg)
+
+
 def saveCounturedImg(inImg, binImg):
-    contours, hierarchy = cv2.findContours(binImg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours = cv2.findContours(binImg, mode=cv2.RETR_LIST, method=cv2.RETR_LIST)[0]
     for cnt in contours:
         x, y, w, h = cv2.boundingRect(cnt)
         cv2.rectangle(inImg, (x, y), (x + w, y + h), (255, 0, 0), 2)
@@ -24,29 +29,24 @@ def saveCounturedImg(inImg, binImg):
     showImg("COUNTURED", inImg)
 
 
-def saveBinImg(binImg):
-    saveImg("rezBin.png", binImg)
 
 
 def createBinaryImg(inImg):
-    blurImg = cv2.GaussianBlur(inImg, (3, 3), 0)
-    grayImg = cv2.cvtColor(blurImg, cv2.COLOR_BGR2GRAY, 1)
+    blurImg = cv2.GaussianBlur(inImg, (21, 21), 0)
+    grayImg = cv2.cvtColor(blurImg, cv2.COLOR_BGR2GRAY)
 
-    laplacian = cv2.Laplacian(grayImg, cv2.CV_32F)
-    laplacian = cv2.convertScaleAbs(laplacian)
+    laplacian = cv2.Laplacian(grayImg, cv2.CV_32F, None, ksize=17, scale=1)
+    threshed_image = cv2.threshold(laplacian, 0, 255, cv2.THRESH_BINARY)[1]
+    threshed_image = cv2.convertScaleAbs(threshed_image)
+    opening = cv2.morphologyEx(threshed_image, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    saveBinImg(opening)
+    return opening
 
-    ret, tresh = cv2.threshold(laplacian, 52, 255, cv2.THRESH_BINARY)
-
-    closing = cv2.morphologyEx(tresh, cv2.MORPH_CLOSE, np.ones((3, 13), np.uint8))
-    return closing
 
 def readImg(name):
-    inImg = cv2.imread(name, 1)
-    return inImg
+    return cv2.imread(name, 1)
 
 
 inImg = readImg("text.bmp")
 binImg = createBinaryImg(inImg)
 saveCounturedImg(inImg, binImg)
-
-

@@ -16,12 +16,11 @@ def saveBinImg(binImg):
 
 
 def createBinaryImg(inImg):
-    blurImg = cv2.GaussianBlur(inImg, (13, 13), 0)
-    grayImg = cv2.cvtColor(blurImg, cv2.COLOR_BGR2GRAY, 1)
-
-    laplacian = cv2.Laplacian(grayImg, cv2.CV_32F)
-    laplacian = laplacian.clip(0.0)
-    return laplacian
+    blurImg = cv2.GaussianBlur(inImg, (21, 21), 0)
+    laplacian = cv2.Laplacian(blurImg, cv2.CV_32F, None, ksize=17, scale=1)
+    thresh = cv2.threshold(laplacian, 0, 255, cv2.THRESH_BINARY)[1]
+    saveBinImg(thresh)
+    return thresh
 
 def readImg(name):
     return cv2.imread(name, 1)
