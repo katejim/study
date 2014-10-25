@@ -275,7 +275,7 @@
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7942873407393156723" nodeInfo="ig">
       <property name="internalValue" nameId="tpce.1083923523171" value="false" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="not enable" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="disable" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7942873407393156775" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="enable" />

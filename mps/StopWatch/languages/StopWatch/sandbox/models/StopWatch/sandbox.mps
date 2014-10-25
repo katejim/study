@@ -20,6 +20,7 @@
         </node>
       </node>
       <node role="dial" roleId="k090.7942873407391939635" type="k090.Dial" typeId="k090.7942873407391687212" id="7942873407393069506" nodeInfo="ng">
+        <property name="fontSize" nameId="k090.7942873407393069627" value="234" />
         <node role="place" roleId="k090.7942873407391921963" type="k090.Coordinates" typeId="k090.7942873407391687224" id="7942873407393069511" nodeInfo="ng">
           <property name="leftX" nameId="k090.7942873407391687278" value="2" />
           <property name="leftY" nameId="k090.7942873407391687282" value="3" />
