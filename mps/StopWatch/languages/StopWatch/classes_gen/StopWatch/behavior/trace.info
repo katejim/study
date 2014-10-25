@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="StopWatch.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="Buttons_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.Buttons_BehaviorDescriptor" />
-  <unitInfo fileName="ColorReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.ColorReference_BehaviorDescriptor" />
-  <unitInfo fileName="Shape_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Shape_BehaviorDescriptor" />
+  <unitInfo fileName="Analog_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.Analog_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="StopWatch.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Button_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Button_BehaviorDescriptor" />
+  <unitInfo fileName="Coordinates_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Coordinates_BehaviorDescriptor" />
+  <unitInfo fileName="Dial_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Dial_BehaviorDescriptor" />
+  <unitInfo fileName="Digital_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.Digital_BehaviorDescriptor" />
+  <unitInfo fileName="Dimensions_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Dimensions_BehaviorDescriptor" />
+  <unitInfo fileName="LightButton_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.LightButton_BehaviorDescriptor" />
+  <unitInfo fileName="Main_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="StopWatch.behavior.Main_BehaviorDescriptor" />
+  <unitInfo fileName="Memorization_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.Memorization_BehaviorDescriptor" />
+  <unitInfo fileName="ShowCurrentType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.ShowCurrentType_BehaviorDescriptor" />
+  <unitInfo fileName="SpecialButtons_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="StopWatch.behavior.SpecialButtons_BehaviorDescriptor" />
   <unitInfo fileName="StopWatch_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="StopWatch.behavior.StopWatch_BehaviorDescriptor" />
   <unitInfo fileName="Time_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.Time_BehaviorDescriptor" />
-  <unitInfo fileName="UI_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="StopWatch.behavior.UI_BehaviorDescriptor" />
 </debugInfo>
 

@@ -4,12 +4,12 @@ package StopWatch.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class Dial_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public Dial_BehaviorDescriptor() {
+public class Coordinates_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+  public Coordinates_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "StopWatch.structure.Dial";
+    return "StopWatch.structure.Coordinates";
   }
 }

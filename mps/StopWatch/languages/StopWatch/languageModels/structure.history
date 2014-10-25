@@ -90,5 +90,23 @@
     </dependencies>
     <rename id="k090.6422299306367181948" type="CHILD" from="formSropWatch" to="formStopWatch" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="6" />
+    </dependencies>
+    <rename id="k090.7942873407391617888" type="CHILD" from="buttons" to="startButton" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="7" />
+    </dependencies>
+    <rename id="k090.7942873407391637133" type="CHILD" from="dimension" to="place" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="k090" modelUID="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)" version="8" />
+    </dependencies>
+    <rename id="k090.7942873407393012389" type="CHILD" from="memory" to="button" />
+  </StructureModification>
 </history>
 

@@ -7,41 +7,33 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
-public class Time_Editor extends DefaultNodeEditor {
+public class Main_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9up4zz_a(editorContext, node);
+    return this.createCollection_w8a4ih_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9up4zz_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9up4zz_a");
+  private EditorCell createCollection_w8a4ih_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_w8a4ih_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_9up4zz_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9up4zz_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9up4zz_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_w8a4ih_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_w8a4ih_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9up4zz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "timePrecisioin:");
-    editorCell.setCellId("Constant_9up4zz_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_9up4zz_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_w8a4ih_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_value");
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -53,13 +45,15 @@ public class Time_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9up4zz_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("precision");
-    provider.setNoTargetText("<no precision>");
+  private EditorCell createRefNode_w8a4ih_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("stopwatch");
+    provider.setNoTargetText("<no stopwatch>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_precision");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("stopwatch");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

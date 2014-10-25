@@ -15,49 +15,47 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
-public class Dial_Editor extends DefaultNodeEditor {
+public class Dimensions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_um4rym_a(editorContext, node);
+    return this.createCollection_q38ftb_a(editorContext, node);
   }
 
-  private EditorCell createCollection_um4rym_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q38ftb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_um4rym_a");
+    editorCell.setCellId("Collection_q38ftb_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createCollection_um4rym_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_um4rym_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_um4rym_c0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_q38ftb_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_q38ftb_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_q38ftb_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_um4rym_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q38ftb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_um4rym_a0");
+    editorCell.setCellId("Collection_q38ftb_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_um4rym_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_um4rym_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q38ftb_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_q38ftb_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_um4rym_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "form:");
-    editorCell.setCellId("Constant_um4rym_a0a");
+  private EditorCell createConstant_q38ftb_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height:");
+    editorCell.setCellId("Constant_q38ftb_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_um4rym_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_q38ftb_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("form");
-    provider.setNoTargetText("<no form>");
+    provider.setRole("height");
+    provider.setNoTargetText("<no height>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_form");
+    editorCell.setCellId("property_height");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,31 +67,31 @@ public class Dial_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_um4rym_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q38ftb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_um4rym_b0");
+    editorCell.setCellId("Collection_q38ftb_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_um4rym_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_um4rym_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q38ftb_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_q38ftb_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_um4rym_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fontSize:");
-    editorCell.setCellId("Constant_um4rym_a1a");
+  private EditorCell createConstant_q38ftb_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width:");
+    editorCell.setCellId("Constant_q38ftb_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_um4rym_b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_q38ftb_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fontSize");
-    provider.setNoTargetText("<no fontSize>");
+    provider.setRole("width");
+    provider.setNoTargetText("<no width>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fontSize");
+    editorCell.setCellId("property_width");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -105,35 +103,31 @@ public class Dial_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_um4rym_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q38ftb_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_um4rym_c0");
+    editorCell.setCellId("Collection_q38ftb_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_um4rym_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_um4rym_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q38ftb_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_q38ftb_b2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_um4rym_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
-    editorCell.setCellId("Constant_um4rym_a2a");
+  private EditorCell createConstant_q38ftb_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depth:");
+    editorCell.setCellId("Constant_q38ftb_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_um4rym_b2a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("place");
-    provider.setNoTargetText("<no place>");
+  private EditorCell createProperty_q38ftb_b2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("depth");
+    provider.setNoTargetText("<no depth>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Dial_Editor._Inline_um4rym_a1c0());
     editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("place");
-    }
+    editorCell.setCellId("property_depth");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -143,24 +137,5 @@ public class Dial_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class _Inline_um4rym_a1c0 extends InlineCellProvider {
-    public _Inline_um4rym_a1c0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_um4rym_a0b2a(editorContext, node);
-    }
-
-    private EditorCell createComponent_um4rym_a0b2a(EditorContext editorContext, SNode node) {
-      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "StopWatch.editor.Location");
-      return editorCell;
-    }
   }
 }

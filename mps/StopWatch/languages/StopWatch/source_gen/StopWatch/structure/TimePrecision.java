@@ -32,7 +32,7 @@ public enum TimePrecision {
   }
 
   public static TimePrecision getDefault() {
-    return TimePrecision.seconds_;
+    return null;
   }
 
   public static TimePrecision parseValue(String value) {

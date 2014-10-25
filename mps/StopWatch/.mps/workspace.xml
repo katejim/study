@@ -21,7 +21,7 @@
       <list>
         <TabState>
           <option name="title" value="Console" />
-          <option name="history" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;model modelUID=&quot;r:bf4b8cf5-d67b-45c0-9d82-d59bb81e77b0(TempModel_1413881766304680000)&quot;&gt;&#10;  &lt;persistence version=&quot;8&quot; /&gt;&#10;  &lt;language namespace=&quot;de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)&quot; /&gt;&#10;  &lt;language namespace=&quot;f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)&quot; /&gt;&#10;  &lt;language namespace=&quot;1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)&quot; /&gt;&#10;  &lt;language namespace=&quot;a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)&quot; /&gt;&#10;  &lt;language namespace=&quot;995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)&quot; /&gt;&#10;  &lt;devkit namespace=&quot;fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)&quot; /&gt;&#10;  &lt;import index=&quot;eynw&quot; modelUID=&quot;r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)&quot; version=&quot;1&quot; /&gt;&#10;  &lt;import index=&quot;z2sp&quot; modelUID=&quot;r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)&quot; version=&quot;0&quot; /&gt;&#10;  &lt;import index=&quot;3xdn&quot; modelUID=&quot;r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)&quot; version=&quot;3&quot; /&gt;&#10;  &lt;import index=&quot;caxt&quot; modelUID=&quot;r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;wns9&quot; modelUID=&quot;r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;tpck&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)&quot; version=&quot;0&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;root type=&quot;eynw.ConsoleRoot&quot; typeId=&quot;eynw.1583916890557930028&quot; id=&quot;3271969819418951997&quot; nodeInfo=&quot;ng&quot;&gt;&#10;    &lt;node role=&quot;history&quot; roleId=&quot;eynw.1583916890557930415&quot; type=&quot;eynw.History&quot; typeId=&quot;eynw.757553790980850366&quot; id=&quot;7354481749039342695&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;    &lt;node role=&quot;commandHolder&quot; roleId=&quot;eynw.1583916890557930417&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;3271969819418951998&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;    &lt;/node&gt;&#10;  &lt;/root&gt;&#10;&lt;/model&gt;&#10;&#10;" />
+          <option name="history" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;model modelUID=&quot;r:e4f770a8-6b25-47b5-99b0-83f4649e305c(TempModel_1414226542684114000)&quot;&gt;&#10;  &lt;persistence version=&quot;8&quot; /&gt;&#10;  &lt;language namespace=&quot;de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)&quot; /&gt;&#10;  &lt;language namespace=&quot;f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)&quot; /&gt;&#10;  &lt;language namespace=&quot;1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)&quot; /&gt;&#10;  &lt;language namespace=&quot;a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)&quot; /&gt;&#10;  &lt;language namespace=&quot;995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)&quot; /&gt;&#10;  &lt;devkit namespace=&quot;fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)&quot; /&gt;&#10;  &lt;import index=&quot;eynw&quot; modelUID=&quot;r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)&quot; version=&quot;1&quot; /&gt;&#10;  &lt;import index=&quot;z2sp&quot; modelUID=&quot;r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)&quot; version=&quot;0&quot; /&gt;&#10;  &lt;import index=&quot;3xdn&quot; modelUID=&quot;r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)&quot; version=&quot;3&quot; /&gt;&#10;  &lt;import index=&quot;caxt&quot; modelUID=&quot;r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;wns9&quot; modelUID=&quot;r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;tpck&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)&quot; version=&quot;0&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;root type=&quot;eynw.ConsoleRoot&quot; typeId=&quot;eynw.1583916890557930028&quot; id=&quot;7942873407391018909&quot; nodeInfo=&quot;ng&quot;&gt;&#10;    &lt;node role=&quot;history&quot; roleId=&quot;eynw.1583916890557930415&quot; type=&quot;eynw.History&quot; typeId=&quot;eynw.757553790980850366&quot; id=&quot;7354481749039342695&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;    &lt;node role=&quot;commandHolder&quot; roleId=&quot;eynw.1583916890557930417&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;7942873407391018910&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;    &lt;/node&gt;&#10;  &lt;/root&gt;&#10;&lt;/model&gt;&#10;&#10;" />
         </TabState>
       </list>
     </option>
@@ -42,52 +42,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UI" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/UI">
+      <file leaf-file-name="LightType" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/LightType">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="selectionEnd" value="5" />
-                    <property name="hasNonTrivialSelection" value="true" />
-                    <property name="caretXRelative" value="16" />
-                    <property name="selectionStart" value="0" />
-                    <property name="caretX" value="171" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306367181948" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249665" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shape" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/Shape">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="15" />
+                    <property name="caretXRelative" value="44" />
+                    <property name="caretX" value="289" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306366969172" />
+                    <cellInfo cellId="property_externalValue" cellNumber="0" isInList="false">
+                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391665408" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -95,13 +62,46 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </inspectorMemento>
-              <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306366969172" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test1" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test1">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="28" />
+                    <property name="caretX" value="279" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="L_property_size" cellNumber="0" isInList="false">
+                      <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393069491" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels>
+                  <errorLabel errorText="" cellId="property_fontSize" cellNumber="0" isInList="false">
+                    <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393069506" />
+                  </errorLabel>
+                </errorLabels>
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
             </state>
           </provider>
         </entry>
@@ -114,11 +114,11 @@
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="36" />
-                    <property name="caretX" value="447" />
+                    <property name="caretXRelative" value="12" />
+                    <property name="caretX" value="303" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419607821" />
+                    <cellInfo cellId="L_property_size" cellNumber="0" isInList="false">
+                      <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393098801" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -126,7 +126,7 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
@@ -136,8 +136,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test1" pinned="false" current="true" current-in-tab="true">
-        <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test1">
+      <file leaf-file-name="Digital" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/Digital">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407391794600" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test3" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test3">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+              <memento viewPositionX="0" viewPositionY="1">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="20" />
+                    <property name="caretX" value="319" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="L_property_leftX" cellNumber="0" isInList="false">
+                      <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Memorization" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/Memorization">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
               <memento viewPositionX="0" viewPositionY="0">
@@ -145,10 +196,10 @@
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
                     <property name="caretXRelative" value="36" />
-                    <property name="caretX" value="463" />
+                    <property name="caretX" value="112" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" />
+                    <cellInfo cellId="property_internalValue" cellNumber="0" isInList="false">
+                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407393156775" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -156,7 +207,7 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
@@ -166,19 +217,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Buttons" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/Buttons">
+      <file leaf-file-name="Memorization" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/Memorization">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407393012455" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimePrecision" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/TimePrecision">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="56" />
-                    <property name="caretX" value="71" />
+                    <property name="caretXRelative" value="36" />
+                    <property name="caretX" value="223" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249666" />
+                    <cellInfo cellId="property_hasNoDefaultMember" cellNumber="0" isInList="false">
+                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7555391427477566248" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -186,13 +258,12 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </inspectorMemento>
-              <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249666" />
             </state>
           </provider>
         </entry>
@@ -202,34 +273,24 @@
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
               <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="15" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277203860" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
+                <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </inspectorMemento>
-              <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277203860" />
+              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407391968285" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Time" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/Time">
+      <file leaf-file-name="Dimensions" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://StopWatch/StopWatch.structure/Dimensions">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
               <memento viewPositionX="0" viewPositionY="0">
@@ -238,64 +299,13 @@
                 <folded />
                 <enabledHints />
               </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
                 <folded />
                 <enabledHints />
               </inspectorMemento>
-              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/3271969819419608007" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShapeType" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/ShapeType">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="60" />
-                    <property name="caretX" value="136" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_internalValue" cellNumber="0" isInList="false">
-                      <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/3271969819419415958" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColorReference" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://StopWatch/StopWatch.structure/ColorReference">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/6422299306366980033" />
+              <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392280585" />
             </state>
           </provider>
         </entry>
@@ -390,6 +400,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -461,20 +473,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="StopWatch.sandbox">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="StopWatch">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -486,8 +484,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="FileSystem" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,7 +494,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SPbAU-Fall-2014/Generative/stopwatch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../languages/mps.demo.calc" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -543,7 +539,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -604,23 +600,11 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://node://StopWatch/StopWatch.structure/UI">
+    <entry file="mps://node://StopWatch/StopWatch.structure/ShapeType">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
           <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="selectionEnd" value="5" />
-                <property name="hasNonTrivialSelection" value="true" />
-                <property name="caretXRelative" value="16" />
-                <property name="selectionStart" value="0" />
-                <property name="caretX" value="171" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306367181948" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
+            <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
@@ -631,11 +615,10 @@
             <folded />
             <enabledHints />
           </inspectorMemento>
-          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249665" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://StopWatch/StopWatch.structure/Shape">
+    <entry file="mps://node://StopWatch/StopWatch.structure/Main">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
@@ -646,7 +629,7 @@
                 <property name="caretX" value="15" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306366969172" />
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391151944" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
@@ -654,13 +637,13 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391152054" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
           </inspectorMemento>
-          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/6422299306366969172" />
+          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391151944" />
         </state>
       </provider>
     </entry>
@@ -683,7 +666,7 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391608492" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
@@ -692,66 +675,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://StopWatch/StopWatch.structure/Buttons">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="56" />
-                <property name="caretX" value="71" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249666" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249666" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://StopWatch/StopWatch.structure/ColorReference">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/6422299306366980033" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test2">
+    <entry file="mps://node://StopWatch/StopWatch.structure/ShowCurrentType">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
           <memento viewPositionX="0" viewPositionY="0">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="36" />
-                <property name="caretX" value="447" />
+                <property name="caretXRelative" value="20" />
+                <property name="caretX" value="265" />
                 <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419607821" />
+                <cellInfo cellId="property_externalValue" cellNumber="0" isInList="false">
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391608480" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
@@ -759,7 +694,7 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391655507" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
@@ -768,7 +703,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://StopWatch/StopWatch.structure/StopWatch">
+    <entry file="mps://node://StopWatch/StopWatch.structure/SpecialButtons">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="116" />
+                <property name="caretX" value="263" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="TransactionalProperty_ueqr71_d0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391655507" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407392673852" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391655507" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Time">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
@@ -779,7 +743,7 @@
                 <property name="caretX" value="15" />
                 <property name="sideSelectDirection" value="NONE" />
                 <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277203860" />
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249667" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
@@ -787,17 +751,75 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392801411" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
           </inspectorMemento>
-          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277203860" />
+          <node node_ref="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/2155112052277249667" />
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://StopWatch/StopWatch.structure/Time">
+    <entry file="mps://node://StopWatch/StopWatch.structure/Button">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="68" />
+                <property name="caretX" value="380" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392801641" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407392694127" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392064430" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/LightButton">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="211" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392777523" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391665408" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392777462" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Analog">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
@@ -806,13 +828,193 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407392957828" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
           </inspectorMemento>
-          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/3271969819419608007" />
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392511457" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Coordinates">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393098801" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392801487" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/ShowCurrentType">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392734197" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392236396" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Dial">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="68" />
+                <property name="caretX" value="259" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407393069844" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393127886" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392801323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Dimensions">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407392280585" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/StopWatch">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407391968285" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/TimePrecision">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="36" />
+                <property name="caretX" value="223" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_hasNoDefaultMember" cellNumber="0" isInList="false">
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7555391427477566248" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/LightType">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="44" />
+                <property name="caretX" value="289" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_externalValue" cellNumber="0" isInList="false">
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407391665408" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Memorization">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407393012455" />
         </state>
       </provider>
     </entry>
@@ -823,11 +1025,43 @@
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="36" />
-                <property name="caretX" value="463" />
+                <property name="caretXRelative" value="28" />
+                <property name="caretX" value="279" />
                 <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" />
+                <cellInfo cellId="L_property_size" cellNumber="0" isInList="false">
+                  <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393069491" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels>
+              <errorLabel errorText="" cellId="property_fontSize" cellNumber="0" isInList="false">
+                <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393069506" />
+              </errorLabel>
+            </errorLabels>
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test2">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="12" />
+                <property name="caretX" value="303" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="L_property_size" cellNumber="0" isInList="false">
+                  <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393098801" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
@@ -835,7 +1069,82 @@
             <folded />
             <enabledHints />
           </memento>
-          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/3271969819419621796" viewPositionX="0" viewPositionY="0">
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Digital">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:af3948fb-6642-4b24-981e-081f202198fa(StopWatch.editor)/7942873407391794600" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch.sandbox/StopWatch.sandbox/Test3">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="1">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="20" />
+                <property name="caretX" value="319" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="L_property_leftX" cellNumber="0" isInList="false">
+                  <node node_reference="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://StopWatch/StopWatch.structure/Memorization">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="36" />
+                <property name="caretX" value="112" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_internalValue" cellNumber="0" isInList="false">
+                  <node node_reference="r:36343e06-6d00-4ea8-b948-884c45f2b2a6(StopWatch.structure)/7942873407393156775" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:013d4b9a-88e7-453e-9aa0-018f5b0d362f(StopWatch.sandbox)/7942873407393217142" viewPositionX="0" viewPositionY="0">
             <selectionStack />
             <errorLabels />
             <folded />

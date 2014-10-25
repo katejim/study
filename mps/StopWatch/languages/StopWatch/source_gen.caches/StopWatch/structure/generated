@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-17k7etydaqc5krs8n4ag8q68dm735s9">
+<dependencies version="2" modelHash="d1jbt6yyvd97go05fe7vadpy07cgc6d">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -9,15 +9,25 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-8chtguhcvj45cjy0bx3xiqekte2lox7" />
-  <common hash="-dmsc1jfp3tjhledp0pqzrpzdgxfh3su" dependsOnNodes="true">
-    <dep root="2155112052277203860" />
-    <dep root="2155112052277249665" />
-    <dep root="2155112052277249666" />
+  <common hash="6301wptb3okbc5hr41h28m94q33o0e0" dependsOnNodes="true">
     <dep root="2155112052277249667" />
     <dep root="3271969819419415956" />
-    <dep root="6422299306366969172" />
-    <dep root="6422299306366979353" />
     <dep root="7555391427477566248" />
+    <dep root="7942873407391088954" />
+    <dep root="7942873407391151944" />
+    <dep root="7942873407391152054" />
+    <dep root="7942873407391478165" />
+    <dep root="7942873407391478170" />
+    <dep root="7942873407391595904" />
+    <dep root="7942873407391608479" />
+    <dep root="7942873407391608492" />
+    <dep root="7942873407391655507" />
+    <dep root="7942873407391665334" />
+    <dep root="7942873407391665406" />
+    <dep root="7942873407391687212" />
+    <dep root="7942873407391687224" />
+    <dep root="7942873407393012337" />
+    <dep root="7942873407393156722" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -26,11 +36,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="2155112052277203860" name="StopWatch" hash="-1mb3aj045bxp7tschotpiuz113j3fg3" />
-  <source id="2155112052277249665" name="UI" hash="-ci9xyeyyemc6pm3j0oh19i80ijqgkll" />
-  <source id="2155112052277249666" name="Buttons" hash="-dcg6pee1k027oh3aqpv7wwgjcwkptxg" />
-  <source id="2155112052277249667" name="Time" hash="-3dhtf0qmve3n3aalkabnrrixvltbxuk" />
-  <source id="7555391427477566248" name="TimePrecision" hash="-2a68ypdpoiqvyaubvogg849sefo8egi">
+  <source id="7555391427477566248" name="TimePrecision" hash="-10ln4g6ol1146wy38cr2c9xdgat8tz6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -40,8 +46,6 @@
     <file name="TimePrecision.java" />
     <file name="TimePrecision_PropertySupport.java" />
   </source>
-  <source id="6422299306366969172" name="Shape" hash="-5lm8jgiz9dx588ji11vesitmf7ju2pr" />
-  <source id="6422299306366979353" name="ColorReference" hash="9tck7xnxhy2ncaqvu45jqjpbapodwda" />
   <source id="3271969819419415956" name="ShapeType" hash="c2mfvplpnvr8nlxcjvupup7gb4chwg7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -50,6 +54,46 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ShapeType.java" />
     <file name="ShapeType_PropertySupport.java" />
+  </source>
+  <source id="7942873407391088954" name="Dimensions" hash="-5dhsefx7cfk1r7a8s864ox0a7u8oiv9" />
+  <source id="7942873407391151944" name="Main" hash="cimsjkn8w8xdi9azd9yo66qyncfd4aj" />
+  <source id="7942873407391152054" name="StopWatch" hash="8qhplqut17pb2stbd25qd1yvm8pzf9d" />
+  <source id="7942873407391478165" name="Analog" hash="-1e7kral4ulhkuzmjsuccdpeixajke35" />
+  <source id="7942873407391478170" name="Digital" hash="-eoc87iy6apr7v8i0t65wkw5q7wm4x9i" />
+  <source id="2155112052277249667" name="Time" hash="deipzcaqzfj1gtjyi22m2bnz6jrf8an" />
+  <source id="7942873407391595904" name="Button" hash="5wk4lgc2w5ti0dtg53nds470nw8olml" />
+  <source id="7942873407391608479" name="ShowCurrentType" hash="20nbbexxyo8obzllq41h09q2modr4hr">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="ShowCurrentType.java" />
+    <file name="ShowCurrentType_PropertySupport.java" />
+  </source>
+  <source id="7942873407391608492" name="ShowCurrentType" hash="bpq19e5rk7fj4ebo3dvfkmxxvdi37xt" />
+  <source id="7942873407391655507" name="SpecialButtons" hash="-bxkkqimgrmwe8dx8ufnkr42moxp73p" />
+  <source id="7942873407391665334" name="LightButton" hash="-awu1iererlt1sqlmm6aqlk2up5o5npj" />
+  <source id="7942873407391665406" name="LightType" hash="-3v07uzlid34dh5h4eg7lknyfyppffb8">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="LightType.java" />
+    <file name="LightType_PropertySupport.java" />
+  </source>
+  <source id="7942873407391687212" name="Dial" hash="-3ni2gai5a35lz24su5y0sp3o6u8kyw" />
+  <source id="7942873407391687224" name="Coordinates" hash="e8dca1mjq2heko7xuzfow5vsiubqxmt" />
+  <source id="7942873407393012337" name="Memorization" hash="-7j7pkclvuejdvart6ese8g90egoy6yr" />
+  <source id="7942873407393156722" name="Memorization" hash="2nq1xg6j8x6lbdkc42h7vjzit2h25vx">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="Memorization.java" />
+    <file name="Memorization_PropertySupport.java" />
   </source>
 </dependencies>
 

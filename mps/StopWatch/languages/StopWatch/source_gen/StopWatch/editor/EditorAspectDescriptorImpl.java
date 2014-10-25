@@ -16,13 +16,23 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new Analog_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new StopWatch_Editor());
+        return Collections.<ConceptEditor>singletonList(new Dial_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Time_Editor());
+        return Collections.<ConceptEditor>singletonList(new Digital_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new UI_Editor());
+        return Collections.<ConceptEditor>singletonList(new Dimensions_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new LightButton_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new Main_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Memorization_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ShowCurrentType_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new Time_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -31,12 +41,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a2, editorComponentId)) {
-          case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
-          case 1:
-            return Collections.<ConceptEditorComponent>singletonList(new ShapeComponent());
-          default:
+        if ("StopWatch.editor.ButtonComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ButtonComponent());
+        }
+        break;
+      case 1:
+        if ("StopWatch.editor.Location".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new Location());
+        }
+        break;
+      case 2:
+        if ("StopWatch.editor.StopWatchComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new StopWatchComponent());
         }
         break;
       default:
@@ -46,7 +62,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"StopWatch.structure.ColorReference", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"StopWatch.editor.ShapeColor", "StopWatch.editor.ShapeComponent"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"StopWatch.structure.Shape"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"StopWatch.structure.Analog", "StopWatch.structure.Dial", "StopWatch.structure.Digital", "StopWatch.structure.Dimensions", "StopWatch.structure.LightButton", "StopWatch.structure.Main", "StopWatch.structure.Memorization", "StopWatch.structure.ShowCurrentType", "StopWatch.structure.Time"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"StopWatch.structure.Button", "StopWatch.structure.Coordinates", "StopWatch.structure.StopWatch"};
 }

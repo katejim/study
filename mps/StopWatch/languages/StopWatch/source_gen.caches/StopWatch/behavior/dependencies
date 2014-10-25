@@ -1,34 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="StopWatch.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="StopWatch.behavior.Buttons_BehaviorDescriptor" />
-    <classNode dependClassName="StopWatch.behavior.ColorReference_BehaviorDescriptor" />
-    <classNode dependClassName="StopWatch.behavior.Shape_BehaviorDescriptor" />
+  <dependency className="StopWatch.behavior.Analog_BehaviorDescriptor" file="Analog_BehaviorDescriptor.java">
     <classNode dependClassName="StopWatch.behavior.StopWatch_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.Analog_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Button_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Coordinates_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Dial_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Digital_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Dimensions_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.LightButton_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Main_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.Memorization_BehaviorDescriptor" />
+    <classNode dependClassName="StopWatch.behavior.ShowCurrentType_BehaviorDescriptor" />
     <classNode dependClassName="StopWatch.behavior.Time_BehaviorDescriptor" />
-    <classNode dependClassName="StopWatch.behavior.UI_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="StopWatch.behavior.Buttons_BehaviorDescriptor" file="Buttons_BehaviorDescriptor.java">
-    <classNode dependClassName="StopWatch.behavior.Shape_BehaviorDescriptor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="StopWatch.behavior.ColorReference_BehaviorDescriptor" file="ColorReference_BehaviorDescriptor.java">
+  <dependency className="StopWatch.behavior.Button_BehaviorDescriptor" file="Button_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="StopWatch.behavior.Shape_BehaviorDescriptor" file="Shape_BehaviorDescriptor.java">
+  <dependency className="StopWatch.behavior.Coordinates_BehaviorDescriptor" file="Coordinates_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.Dial_BehaviorDescriptor" file="Dial_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.Digital_BehaviorDescriptor" file="Digital_BehaviorDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.StopWatch_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.Dimensions_BehaviorDescriptor" file="Dimensions_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.LightButton_BehaviorDescriptor" file="LightButton_BehaviorDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.SpecialButtons_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.Main_BehaviorDescriptor" file="Main_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.Memorization_BehaviorDescriptor" file="Memorization_BehaviorDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.SpecialButtons_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.ShowCurrentType_BehaviorDescriptor" file="ShowCurrentType_BehaviorDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.SpecialButtons_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="StopWatch.behavior.SpecialButtons_BehaviorDescriptor" file="SpecialButtons_BehaviorDescriptor.java">
+    <classNode dependClassName="StopWatch.behavior.Button_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="StopWatch.behavior.StopWatch_BehaviorDescriptor" file="StopWatch_BehaviorDescriptor.java">
@@ -42,12 +99,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="StopWatch.behavior.Time_BehaviorDescriptor" file="Time_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="StopWatch.behavior.UI_BehaviorDescriptor" file="UI_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />

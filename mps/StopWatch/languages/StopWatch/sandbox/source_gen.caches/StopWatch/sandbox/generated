@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-edbkuhchuq97c96yydj1i1kjh7xj8l8">
-  <common hash="e1oyyiksjxq5sv4wk58l54y2pc7n8bj" />
-  <source id="3271969819419607820" name="Test2" hash="arw025rho9p0y7ss7m9tt5jauixufs8">
+<dependencies version="2" modelHash="-cavqex2a9irj2qskfx37cz1orca6ezt">
+  <common hash="-etairkmcdv8manni1v2jxmj0bs1oito" />
+  <source id="7942873407393069486" name="Test1" hash="4olk9eyk1kp9jv9f49ino3yq0d0g25r">
+    <file name="Test1" />
+  </source>
+  <source id="7942873407393069545" name="Test2" hash="-diqk8p5qpd5ixiipfe507sdova1xise">
     <file name="Test2" />
   </source>
-  <source id="3271969819419621795" name="Test1" hash="-2xt2uug3gobq0y6umkq7roir3fjkms0">
-    <file name="Test1" />
+  <source id="7942873407393127684" name="Test3" hash="-4ufpwewytihbm6anxhy34ebln5anyty">
+    <file name="Test3" />
   </source>
 </dependencies>
 

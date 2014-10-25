@@ -12,22 +12,32 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 3:
-        return new StopWatch_BehaviorDescriptor();
       case 5:
-        return new UI_BehaviorDescriptor();
+        return new Dimensions_BehaviorDescriptor();
+      case 7:
+        return new Main_BehaviorDescriptor();
       case 0:
-        return new Buttons_BehaviorDescriptor();
+        return new Analog_BehaviorDescriptor();
       case 4:
+        return new Digital_BehaviorDescriptor();
+      case 10:
         return new Time_BehaviorDescriptor();
-      case 2:
-        return new Shape_BehaviorDescriptor();
       case 1:
-        return new ColorReference_BehaviorDescriptor();
+        return new Button_BehaviorDescriptor();
+      case 9:
+        return new ShowCurrentType_BehaviorDescriptor();
+      case 6:
+        return new LightButton_BehaviorDescriptor();
+      case 3:
+        return new Dial_BehaviorDescriptor();
+      case 2:
+        return new Coordinates_BehaviorDescriptor();
+      case 8:
+        return new Memorization_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"StopWatch.structure.Buttons", "StopWatch.structure.ColorReference", "StopWatch.structure.Shape", "StopWatch.structure.StopWatch", "StopWatch.structure.Time", "StopWatch.structure.UI"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"StopWatch.structure.Analog", "StopWatch.structure.Button", "StopWatch.structure.Coordinates", "StopWatch.structure.Dial", "StopWatch.structure.Digital", "StopWatch.structure.Dimensions", "StopWatch.structure.LightButton", "StopWatch.structure.Main", "StopWatch.structure.Memorization", "StopWatch.structure.ShowCurrentType", "StopWatch.structure.Time"};
 }
