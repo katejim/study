@@ -16,8 +16,8 @@ def saveBinImg(binImg):
 
 
 def createBinaryImg(inImg):
-    blurImg = cv2.GaussianBlur(inImg, (21, 21), 0)
-    laplacian = cv2.Laplacian(blurImg, cv2.CV_32F, None, ksize=17, scale=1)
+    blurImg = cv2.GaussianBlur(inImg, (39, 21), 0)
+    laplacian = cv2.Laplacian(blurImg, cv2.CV_32F, None, ksize=21, scale=1)
     thresh = cv2.threshold(laplacian, 0, 255, cv2.THRESH_BINARY)[1]
     saveBinImg(thresh)
     return thresh
