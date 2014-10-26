@@ -2,7 +2,6 @@ __author__ = 'kate'
 
 import numpy as np
 import cv2
-from copy import copy
 
 
 def showImg(name, mat):
@@ -21,14 +20,26 @@ def saveBinImg(binImg):
 
 
 def saveCounturedImg(inImg, binImg):
-    contours = cv2.findContours(binImg, mode=cv2.RETR_LIST, method=cv2.RETR_LIST)[0]
-    for cnt in contours:
-        x, y, w, h = cv2.boundingRect(cnt)
-        cv2.rectangle(inImg, (x, y), (x + w, y + h), (255, 0, 0), 2)
-    saveImg("rezContour2.png", inImg)
-    showImg("COUNTURED", inImg)
+    h, w = binImg.shape
+    mask = np.zeros((h + 2, w + 2), np.uint8)
+    x, y = 0, 0
+    while y < h:
+        x = 0
+        while x < w:
+            if (binImg[y][x] == 255):
 
-
+                retval, rect = cv2.floodFill(binImg, mask, (x, y), (0, 255, 255))
+                if (retval != 0):
+                        cv2.rectangle(inImg, (rect[0], rect[1]), (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 2)
+                        x =rect[0] + rect[2] + 1
+                else:
+                    x += 1
+            else:
+                x += 1
+        y += 1
+    showImg("Contured image", inImg)
+    saveBinImg(inImg)
+    print("done")
 
 
 def createBinaryImg(inImg):
