@@ -1,3 +1,3 @@
 study
 =====
-AU labs & dz
+AU hw
