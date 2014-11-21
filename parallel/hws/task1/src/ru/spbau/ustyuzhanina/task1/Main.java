@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -23,34 +24,33 @@ public class Main {
         Scanner terminalInput = new Scanner(System.in);
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
-             @Override
-             public void run() {
-                 threadPool.setDone(true);
-                 ArrayList<Thread> threadList;
-                 synchronized (threadPool) {
-                     threadList = threadPool.getThreadsList();
-                     threadPool.notifyAll();
-                     threadPool.setDone(true);
-                 }
-                 for (Thread thread : threadList) {
-                     try {
-                         thread.join();
-                     } catch (InterruptedException e) {
-                         break;
-                     }
-                 }
-                 System.out.println("catch hook");
-             }
-         }
+                                                 @Override
+                                                 public void run() {
+                                                     threadPool.setDone(true);
+                                                     ArrayList<Thread> threadList;
+                                                     synchronized (threadPool) {
+                                                         threadList = threadPool.getThreadsList();
+                                                         threadPool.notifyAll();
+                                                         threadPool.setDone(true);
+                                                     }
+                                                     for (Thread thread : threadList) {
+                                                         try {
+                                                             thread.join();
+                                                         } catch (InterruptedException e) {
+                                                             break;
+                                                         }
+                                                     }
+                                                     System.out.println("catch hook");
+                                                 }
+                                             }
         );
 
-        while (true)
-        {
+        while (true) {
             try {
                 String value = terminalInput.nextLine();
-                if ((value.substring(0, 3).equals("add"))) {
+                if ((value.startsWith("add"))) {
                     threadPool.addTask(Integer.parseInt(value.substring(4)));
-                } else if ((value.substring(0, 6).equals("remove"))) {
+                } else if ((value.startsWith("remove"))) {
                     threadPool.cancelTask(Integer.parseInt(value.substring(7)));
                 } else if (value.equals("current")) {
                     threadPool.showData();
@@ -59,8 +59,9 @@ public class Main {
                 } else {
                     System.out.println("Your put wrong value, try next time");
                 }
-            } catch (Exception e) {
-                System.out.println("Your put wrong value, try next time");
+            } catch (NoSuchElementException ex) {
+                threadPool.exit();
+                break;
             }
         }
     }
