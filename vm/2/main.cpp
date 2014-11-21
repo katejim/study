@@ -51,11 +51,16 @@ int main(int argc, char** argv) {
     //    const char* expr = "int t; t = 4;"
     //                       "function int strlen(int t) native 'strlen'; function int strlen2(int t) native 'strlen2'; strlen2(t); strlen(t);";
 
-    //const char* expr = "while (5 > 7) { print (1); }";
+    // const char* expr = "int a; a = 8; while (5 > 7) { int a; a = 7; print (a); }";
 
-    const char* expr = "int i; i = 0; for (i in -3..4)  {"
-                       "print(i);"
-                       "}";
+    //    const char* expr = "int i; i = 0; for (i in -3..4)  {"
+    //                       "print(i);"
+    //                       "}";
+
+    const char* expr = "int a; a = 31; if (a > 0)"
+                            "{ int a; a = 3; print(a);} "
+                            "else {int a; a = 4; print(a);}";
+
 
     cout << "expr = " << expr <<endl;
 

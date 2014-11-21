@@ -19,6 +19,43 @@ int ByteCodeVisitor::getFuncIdx(Context * context, string varName) const {
     return currentMap[varName];
 }
 
+void ByteCodeVisitor::initContext(BlockNode *node){
+    Context * newContext = new Context(currentContext++, current);
+    current = newContext;
+
+
+    VariableMap varMap;
+    int16_t varIndx = 0;
+
+
+    Scope::VarIterator it(node->scope());
+    while(it.hasNext())
+    {
+        AstVar * var = it.next();
+        Variable variable = make_pair(varIndx++, var->type());
+        varMap.insert(make_pair(var->name(), variable));
+    }
+    allVariables.push_back(varMap);
+    newContext->variableMap = varMap;
+
+    Scope::FunctionIterator itf(node->scope());
+    FunctionMap funcMap;
+    while(itf.hasNext())
+    {
+        AstFunction * fn = itf.next();
+        BytecodeFunction *bcFn = new BytecodeFunction(fn);
+        code->addFunction(bcFn);
+        funcMap.insert(make_pair(fn->name(), funcIdx++));
+    }
+    allFunctions.push_back(funcMap);
+    newContext->functionMap = funcMap;
+
+    Scope::FunctionIterator itff(node->scope());
+    while(itff.hasNext()){
+        AstFunction * fn = itff.next();
+        fn->node()->visit(this);
+    }
+}
 
 VarType ByteCodeVisitor::getTypeToBinOperation(VarType left, VarType right){
     if ((left==VT_INVALID) || (right==VT_INVALID)){
@@ -170,17 +207,18 @@ void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
     int16_t varIndx = 0;
 
     //first variables is signature vars
-    if (node->signature().size() > 1){
-        int size = node->signature().size();
-        for (int i = size - 1; i != 0; --i){
-            SignatureElement elem = node->signature().at(i);
-            if (!native){
-                storeValueFromStack(tASSIGN, elem.first, elem.first, make_pair(current->idx, varIndx));
-                Variable variable = make_pair(varIndx++, elem.first);
-                varMap.insert(make_pair(elem.second, variable));
+    if (node->isFunctionNode())
+        if (node->signature().size() > 1){
+            int size = node->signature().size();
+            for (int i = size - 1; i != 0; --i){
+                SignatureElement elem = node->signature().at(i);
+                if (!native){
+                    storeValueFromStack(tASSIGN, elem.first, elem.first, make_pair(current->idx, varIndx));
+                    Variable variable = make_pair(varIndx++, elem.first);
+                    varMap.insert(make_pair(elem.second, variable));
+                }
             }
         }
-    }
 
     if (!native){
         Scope::VarIterator it(node->body()->scope());
@@ -234,6 +272,7 @@ void ByteCodeVisitor::visitCallNode(CallNode * node)
     }
 }
 
+
 void ByteCodeVisitor::visitWhileNode(WhileNode * node)
 {
     Label inM(byteCode()), endM(byteCode());
@@ -243,10 +282,13 @@ void ByteCodeVisitor::visitWhileNode(WhileNode * node)
     byteCode()->addInsn(zeroMap[VT_INT]);
     byteCode()->addBranch(BC_IFICMPE, endM);
 
+    initContext(node->loopBlock());
     node->loopBlock()->visit(this);
 
     byteCode()->addBranch(BC_JA, inM);
     byteCode()->bind(endM);
+
+    current = current->parent;
 }
 
 //incremented var save on VARO
@@ -266,6 +308,8 @@ void ByteCodeVisitor::visitForNode(ForNode * node)
 
     byteCode()->addBranch(BC_IFICMPG, endM);
 
+
+    initContext(node->body());
     node->body()->visit(this);
 
     //increment var
@@ -276,6 +320,7 @@ void ByteCodeVisitor::visitForNode(ForNode * node)
 
     byteCode()->addBranch(BC_JA, inM);
     byteCode()->bind(endM);
+    current = current->parent;
 }
 
 //TODO new scope - maybe add to block node
@@ -286,10 +331,12 @@ void ByteCodeVisitor::visitIfNode(IfNode * node)
     //return 0 1 or -1
     node->ifExpr()->visit(this);
 
+    initContext(node->thenBlock());
     byteCode()->addInsn(zeroMap[VT_INT]);
 
     //suppose that BC_IFICMPE pop values from stack
     byteCode()->addBranch(BC_IFICMPE, elseM);
+
 
     node->thenBlock()->visit(this);
 
@@ -299,9 +346,11 @@ void ByteCodeVisitor::visitIfNode(IfNode * node)
     byteCode()->bind(elseM);
     if(node->elseBlock() != NULL)
     {
+        initContext(node->elseBlock());
         node->elseBlock()->visit(this);
     }
     byteCode()->bind(endM);
+    current = current->parent;
 }
 
 

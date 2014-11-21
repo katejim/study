@@ -119,6 +119,9 @@ private:
     map <VarType, Instruction> compareMap;
 
     void initMaps();
+
+private:
+    void initContext(BlockNode * node);
 };
 
 Status *BytecodeTranslatorImpl::translate(const string & program,
