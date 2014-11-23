@@ -58,13 +58,18 @@ void ByteCodeVisitor::initContext(BlockNode *node){
 }
 
 VarType ByteCodeVisitor::getTypeToBinOperation(VarType left, VarType right){
-    if ((left==VT_INVALID) || (right==VT_INVALID)){
-        return VT_INVALID;
-    } else if(left == right){
+    if (right==VT_INVALID)
+        assert(left == VT_INVALID);
+    if (left==VT_INVALID)
+        assert(left == VT_INVALID);
+    if (left == VT_STRING)
+        assert(left==VT_STRING);
+    if (right == VT_STRING)
+        assert(right == VT_STRING);
+    if(left == right)
         return left;
-    } else if (left != right){
+    if (left != right)
         return VT_DOUBLE;
-    }
     return VT_INVALID;
 }
 
@@ -131,7 +136,7 @@ void ByteCodeVisitor::visitIntLiteralNode(IntLiteralNode * node)
 void ByteCodeVisitor::visitStringLiteralNode(StringLiteralNode * node)
 {
     resultType = VT_STRING;
-
+    pushStringOnStack(node->literal());
 }
 
 void ByteCodeVisitor::visitLoadNode(LoadNode * node)
@@ -180,9 +185,6 @@ void ByteCodeVisitor::visitBlockNode(BlockNode * node)
             node->nodeAt(i)->visit(this);
     }
 }
-
-
-
 
 //native
 void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
@@ -239,7 +241,10 @@ void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
         {
             AstFunction * fn = itf.next();
             BytecodeFunction *bcFn = new BytecodeFunction(fn);
-            code->addFunction(bcFn);
+            if (fn->node()->isNativeCallNode())
+                code->makeNativeFunction(fn->name(), fn->node()->signature(), 0 );
+            else
+                code->addFunction(bcFn);
             funcMap.insert(make_pair(fn->name(), funcIdx++));
         }
         allFunctions.push_back(funcMap);
@@ -402,32 +407,55 @@ void ByteCodeVisitor::pushDoubleOnStack(double value){
     byteCode()->addDouble(value);
 }
 
-void ByteCodeVisitor::pushIntOnStack(int value){
+void ByteCodeVisitor::pushIntOnStack(int64_t value){
     byteCode()->addInsn(BC_ILOAD);
     byteCode()->addInt64(value);
 }
 
+//STRING idx  = idx in vector/ and NO idx in scope & varIDX
+void ByteCodeVisitor::pushStringOnStack(string value){
+    byteCode()->addInsn(BC_SLOAD);
+    // if it is variable we load it simply in stack by value
+    // but String shoud be load by link
+    // we get current context and add it to current Variable Map
+    // add to Code class
+    VariableMap currentMap = current->variableMap;
+    int16_t idx = currentMap.size();
+    Variable var = make_pair(currentMap.size(), VT_STRING);
+    currentMap.insert(make_pair(value, var));
+    current->variableMap = currentMap;
+    byteCode()->addInt16(idx);
+    code->makeStringConstant(value);
+}
 
-//TODO handle VT_INVALID
 void ByteCodeVisitor::storeValueFromStack(TokenKind kind, VarType typeOut, VarType curType, pair<int16_t, int16_t> var){
-    typeConverter(typeOut, curType);
-    if (kind == tINCRSET){
-        loadValueToStack(typeOut, var);
-        arithOperation(tADD, typeOut);
-    } else if (kind == tDECRSET){
-        loadValueToStack(typeOut, var);
-        byteCode()->addInsn(subMap[typeOut]);
-    }
+    if (curType == VT_INVALID)
+        assert(curType==VT_INVALID);
+    if (curType != VT_STRING){
+        typeConverter(typeOut, curType);
+        if (kind == tINCRSET){
+            loadValueToStack(typeOut, var);
+            arithOperation(tADD, typeOut);
+        } else if (kind == tDECRSET){
+            loadValueToStack(typeOut, var);
+            byteCode()->addInsn(subMap[typeOut]);
+        }
 
-    byteCode()->addInsn(storeMap[typeOut]);
-    byteCode()->addInt16(var.first);
-    byteCode()->addInt16(var.second);
+        byteCode()->addInsn(storeMap[typeOut]);
+        byteCode()->addInt16(var.first);
+        byteCode()->addInt16(var.second);
+    }
 }
 
 void ByteCodeVisitor::loadValueToStack(VarType typeOut, pair<int16_t, int16_t> var){
-    byteCode()->addInsn(loadMap[typeOut]);
-    byteCode()->addInt16(var.first);
-    byteCode()->addInt16(var.second);
+    if (typeOut == VT_INVALID)
+        assert(typeOut==VT_INVALID);
+
+    if (typeOut != VT_STRING){
+        byteCode()->addInsn(loadMap[typeOut]);
+        byteCode()->addInt16(var.first);
+        byteCode()->addInt16(var.second);
+    }
 }
 
 void ByteCodeVisitor::printValueFromStack(VarType typeOut){
@@ -445,6 +473,9 @@ void ByteCodeVisitor::call(int16_t idx, bool native){
 }
 //TODO VT_INVALID MOD NOT INT
 void ByteCodeVisitor::arithOperation(TokenKind kind, VarType resultType){
+    if (resultType == VT_INVALID)
+        assert(resultType==VT_INVALID);
+
     switch (kind) {
     case tADD:
         byteCode()->addInsn(sumMap[resultType]);
@@ -461,29 +492,19 @@ void ByteCodeVisitor::arithOperation(TokenKind kind, VarType resultType){
         byteCode()->addInsn(divMap[resultType]);
         break;
     case tMOD:
-        if (resultType != VT_INT)
-            cout << "WRONG TYPE";
         byteCode()->addInsn(BC_SWAP);
         byteCode()->addInsn(BC_IMOD);
         break;
     case tAAND:
-        if (resultType != VT_INT)
-            cout << "WRONG TYPE";
         byteCode()->addInsn(BC_IAAND);
         break;
     case tAOR:
-        if (resultType != VT_INT)
-            cout << "WRONG TYPE";
         byteCode()->addInsn(BC_IAOR);
         break;
     case tAXOR:
-        if (resultType != VT_INT)
-            cout << "WRONG TYPE";
         byteCode()->addInsn(BC_IAXOR);
         break;
     case tRANGE:
-        if (resultType != VT_INT)
-            cout << "WRONG TYPE";
         byteCode()->addInsn(BC_STOREIVAR1);
         byteCode()->addInsn(BC_STOREIVAR0);
     default:
@@ -491,7 +512,10 @@ void ByteCodeVisitor::arithOperation(TokenKind kind, VarType resultType){
     }
 }
 
+void ByteCodeVisitor::visitNativeCallNode(NativeCallNode *node){}
 void ByteCodeVisitor::logicalOperations(TokenKind kind, VarType resType){
+    if (resType == VT_INVALID)
+        assert(resType==VT_INVALID);
     byteCode()->addInsn(zeroMap[resType]);
     byteCode()->addInsn(compareMap[resType]);
     byteCode()->addInsn(BC_SWAP);
@@ -566,6 +590,14 @@ void ByteCodeVisitor::initMaps(){
     storeMap[VT_INT] = BC_STORECTXIVAR;
     storeMap[VT_DOUBLE] = BC_STORECTXDVAR;
     storeMap[VT_STRING] = BC_STORECTXSVAR;
+
+    pushMap[VT_INT] = BC_ILOAD;
+    pushMap[VT_DOUBLE] = BC_DLOAD;
+    pushMap[VT_STRING] = BC_SLOAD;
+
+    popMap[VT_INT] = BC_STORECTXIVAR;
+    popMap[VT_DOUBLE] = BC_STORECTXDVAR;
+    popMap[VT_STRING] = BC_STORECTXSVAR;
 
     printMap[VT_INT] = BC_IPRINT;
     printMap[VT_DOUBLE] = BC_DPRINT;

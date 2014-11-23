@@ -3,9 +3,7 @@
 #include "mathvm.h"
 #include "parser.h"
 #include "visitors.h"
-#include "generatebytecode.h"
 #include "context.h"
-#include "errors.h"
 #include <iostream>
 #include <map>
 
@@ -28,38 +26,23 @@ class ByteCodeVisitor: public AstVisitor
     typedef pair<int16_t, VarType> Variable;
     typedef map <string, Variable> VariableMap;
 
+
     //with unique id to all program
     typedef bool native;
     typedef map <string, int16_t> FunctionMap;
     typedef map <int16_t, native> Function;
+    void visitTop();
+#define VISITOR_FUNCTION(type, name) \
+    void visit##type(type* node);
+    FOR_NODES(VISITOR_FUNCTION)
+#undef VISITOR_FUNCTION
 
-public:
-    ByteCodeVisitor(AstFunction * top_m):top(top_m),  level(-1), code(new KatyaCode)
+    public:
+        ByteCodeVisitor(AstFunction * top_m):top(top_m), code(new KatyaCode)
     {
         initMaps();
         visitTop();
     }
-    //TODO implements macros
-    void visitBinaryOpNode(BinaryOpNode * node);
-    void visitUnaryOpNode(UnaryOpNode * node);
-    void visitDoubleLiteralNode(DoubleLiteralNode * node);
-    void visitIntLiteralNode(IntLiteralNode * node);
-    void visitStringLiteralNode(StringLiteralNode * node);
-    void visitLoadNode(LoadNode * node);
-    void visitStoreNode(StoreNode * node);
-    void visitPrintNode(PrintNode * node);
-    void visitBlockNode(BlockNode * node);
-    void visitReturnNode(ReturnNode *node);
-
-    //native
-    void visitFunctionNode(FunctionNode * node);
-    void visitTop();
-
-    void visitCallNode(CallNode * node);
-
-    void visitIfNode(IfNode * node);
-    void visitWhileNode(WhileNode *node);
-    void visitForNode(ForNode *node);
 
     Code * getCode(){
         return code;
@@ -80,22 +63,19 @@ private:
 
     VarType getTypeToBinOperation(VarType left, VarType right);
 
-    ostream & result = std::cout;
     AstFunction * top;
-    size_t level;
     Code * code;
-    Context *context = NULL, *current;
+    Context * current;
     static int16_t currentContext;
 
 private:
     void typeConverter(VarType typeOut, VarType curType);
     void pushDoubleOnStack(double value);
-    void pushIntOnStack(int value);
-    //TODO handle VT_INVALID
+    void pushIntOnStack(int64_t value);
+    void pushStringOnStack(string value);
     void storeValueFromStack(TokenKind kind, VarType typeOut, VarType curType, pair<int16_t, int16_t> var);
     void loadValueToStack(VarType typeOut, pair<int16_t, int16_t> var);
     void printValueFromStack(VarType typeOut);
-    //TODO VT_INVALID MOD NOT INT
     void arithOperation(TokenKind kind, VarType resultType);
     void unaryOperations(VarType resultType, TokenKind kind);
     void logicalOperations(TokenKind kind, VarType resultType);
@@ -107,6 +87,8 @@ private:
 
     map <VarType, Instruction> loadMap;
     map <VarType, Instruction> storeMap;
+    map <VarType, Instruction> pushMap;
+    map <VarType, Instruction> popMap;
     map <VarType, Instruction> printMap;
     map <VarType, Instruction> sumMap;
     map <VarType, Instruction> subMap;
@@ -140,6 +122,7 @@ Status *BytecodeTranslatorImpl::translate(const string & program,
         bcF->bytecode()->dump(cout);
         cout << endl;
     }
+
     return Status::Ok();
 }
 

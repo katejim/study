@@ -31,18 +31,18 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    //    const char* expr ="int a; a = 8; double b; b = 8.0; print(5 > 3);"
-    //                      "function void add(double x, int t) {"
-    //                      "print(x);"
-    //                      "function void addw3(int y)"
-    //                      "{"
-    //                      "print(y);"
-    //                      "};"
-    //                      "} "
-    //                      "function void NEW(int y)"
-    //                      "{"
-    //                      "print(y);"
-    //                      "}; add(b, a); b = 7.3;" ;
+//        const char* expr ="int a; a = 8; double b; b = 8.0; print(5 > 3);"
+//                          "function void add(double x, int t) {"
+//                          "print(x);"
+//                          "function void addw3(int y)"
+//                          "{"
+//                          "print(y);"
+//                          "};"
+//                          "} "
+//                          "function void NEW(int y)"
+//                          "{"
+//                          "print(y);"
+//                          "}; add(b, a); b = 7.3;" ;
 
     //    const char* expr = "int a; a = 6; int b; b = 3;"
     //                       "function void mprint(int t) { print(b);     function void add(int t) { print (b);} }"
@@ -57,11 +57,21 @@ int main(int argc, char** argv) {
     //                       "print(i);"
     //                       "}";
 
-    const char* expr = "int a; a = 31; if (a > 0)"
-                            "{ int a; a = 3; print(a);} "
-                            "else {int a; a = 4; print(a);}";
+    //    const char* expr = "int a; a = 31; if (a > 0)"
+    //                            "{ int a; a = 3; print(a);} "
+    //                            "else {int a; a = 4; print(a);}";
 
 
+    //    const char* expr =
+    //                        "print(12345678, '\n');"
+    //                        "print(-1234567890123456, '\n');"
+
+    //                        "print(1.0, '\n');"
+    //                        "print(-2.0, '\n');"
+    //                        "print(1e8, '\n');"
+    //            "print(1e-8, '');";
+
+    const char * expr = "print('asd' + 'asdsa');";
     cout << "expr = " << expr <<endl;
 
     bool isDefaultExpr = true;
