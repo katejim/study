@@ -24,25 +24,21 @@ int main(int argc, char** argv) {
             script = argv[i];
         }
     }
-    Translator* translator = Translator::create(impl);
 
-    if (translator == 0) {
-        cout << "TODO: Implement translator factory in translator.cpp!!!!" << endl;
-        return 1;
-    }
 
-        const char* expr ="int a; a = 8; double b; b = 8.0; print(5 > 3);"
-                          "function void add(double x, int t) {"
-                          "print(x);"
-                          "function void addw3(int y)"
-                          "{"
-                          "print(y);"
-                          "};"
-                          "} "
-                          "function void NEW(int y)"
-                          "{"
-                          "print(y);"
-                          "}; add(b, a); b = 7.3;" ;
+
+    //        const char* expr ="int a; a = 8; double b; b = 8.0; print(5 > 3);"
+    //                          "function void add(double x, int t) {"
+    //                          "print(x);"
+    //                          "function void addw3(int y)"
+    //                          "{"
+    //                          "print(y);"
+    //                          "};"
+    //                          "} "
+    //                          "function void NEW(int y)"
+    //                          "{"
+    //                          "print(y);"
+    //                          "}; add(b, a); b = 7.3;" ;
 
     //    const char* expr = "int a; a = 6; int b; b = 3;"
     //                       "function void mprint(int t) { print(b);     function void add(int t) { print (b);} }"
@@ -62,27 +58,20 @@ int main(int argc, char** argv) {
     //                            "else {int a; a = 4; print(a);}";
 
 
-    //    const char* expr =
-    //                        "print(12345678, '\n');"
-    //                        "print(-1234567890123456, '\n');"
+        const char* expr =
+        "function int fact(int n) {\
+                if (n < 3) {\
+                    return n;\
+                }\
+                return n*fact(n-1) + fact(n-2);\
+            }\
+        fact(1);";
 
-    //                        "print(1.0, '\n');"
-    //                        "print(-2.0, '\n');"
-    //                        "print(1e8, '\n');"
-    //            "print(1e-8, '');";
 
-    // const char * expr = "print('asd' + 'asdsa');";
-//    const char* expr =
-//    "function int fact(int n) {\
-//            if (n < 3) {\
-//                return n;\
-//            }\
-//            return n*fact(n-1) + fact(n-2);\
-//        }\
-//    fact(1);";
 
-     //const char* expr = "int l; function int add(int a){ return 8;} l = 3; l*add(l); ";
-    cout << "expr = " << expr <<endl;
+    //cout << "expr = " << expr <<endl;
+
+    Translator* translator = new BytecodeTranslatorImpl();
 
     bool isDefaultExpr = true;
 

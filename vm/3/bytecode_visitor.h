@@ -128,7 +128,8 @@ Status *BytecodeTranslatorImpl::translate(const string & program,
         cout << endl;
     }
 
-    return Status::Ok();
+    vector<Var *> vars;
+    return kc.execute(vars);
 }
 
 Translator * Translator::create(const string & impl)

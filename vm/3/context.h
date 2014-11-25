@@ -12,17 +12,17 @@ struct Context
     typedef map <string, Variable> VariableMap;
 
     //with unique id to all program
-    typedef map <string, int16_t> FunctionMap;
+    typedef map <string, int16_t> FunctionMapM;
 
     VariableMap variableMap;
-    FunctionMap functionMap;
+    FunctionMapM functionMap;
 
     Context * parent;
     string name;
     int16_t idx;
 
 
-    Context(int16_t idxM, VariableMap variableMapM, FunctionMap functionMapM, Context * parentM):
+    Context(int16_t idxM, VariableMap variableMapM, FunctionMapM functionMapM, Context * parentM):
        idx(idxM), variableMap(variableMapM), functionMap(functionMapM), parent(parentM)
     {}
     Context(int16_t idxM, Context * parentM):idx(idxM), parent(parentM)
