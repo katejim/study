@@ -6,6 +6,7 @@
 #include "context.h"
 #include <iostream>
 #include <map>
+#include "interpretator.h"
 
 using namespace mathvm;
 using std::ostream;
@@ -13,13 +14,6 @@ using std::cout;
 using std::map;
 using std::make_pair;
 
-class InterpretCode : public Code{
-public:
-    InterpretCode(){}
-    virtual Status* execute(vector<Var*>& vars) {
-        return Status::Ok();
-    }
-};
 
 //TODO
 //destructor remove all context
@@ -120,29 +114,29 @@ Status *BytecodeTranslatorImpl::translate(const string & program,
     ByteCodeVisitor result(parser.top(), &kc);
     *code = result.getCode();
 
-    Code::FunctionIterator it(*code);
-    while(it.hasNext()){
-        BytecodeFunction *bcF = (BytecodeFunction*)it.next();
-        cout << endl<<"nameF = " <<bcF->name() << endl;
-        bcF->bytecode()->dump(cout);
-        cout << endl;
-    }
+//    Code::FunctionIterator it(*code);
+//    while(it.hasNext()){
+//        BytecodeFunction *bcF = (BytecodeFunction*)it.next();
+//        cout << endl<<"nameF = " <<bcF->name() << endl;
+//        bcF->bytecode()->dump(cout);
+//        cout << endl;
+//    }
 
     vector<Var *> vars;
     return kc.execute(vars);
 }
 
-Translator * Translator::create(const string & impl)
-{
-    if (impl == "intepreter")
-    {
-        return new BytecodeTranslatorImpl();
-    }
-    else
-    {
-        return NULL;
-    }
-}
+//Translator * Translator::create(const string & impl)
+//{
+//    if (impl == "intepreter")
+//    {
+//        return new BytecodeTranslatorImpl();
+//    }
+//    else
+//    {
+//        return NULL;
+//    }
+//}
 
 
 #endif // BYTECODE_VISITOR_H

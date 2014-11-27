@@ -18,14 +18,14 @@ struct Utils{
         case BC_IADD: case BC_ISUB: case BC_IMUL: case BC_IDIV:
         case BC_IMOD: case BC_INEG:
         case BC_IAOR: case BC_IAAND: case BC_IAXOR:
-        case BC_I2D:
+        case BC_I2D: case BC_ICMP:
         case BC_LOADCTXIVAR: case BC_STORECTXIVAR:
             return VT_INT;
             break;
         case BC_DLOAD: case BC_DLOAD0: case BC_DLOAD1: case BC_DLOADM1:
         case BC_DADD: case BC_DSUB: case BC_DMUL: case BC_DDIV:
         case BC_DNEG:
-        case BC_D2I:
+        case BC_D2I: case BC_DCMP:
         case BC_LOADCTXDVAR: case BC_STORECTXDVAR:
             return VT_DOUBLE;
             break;

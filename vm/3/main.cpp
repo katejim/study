@@ -58,18 +58,18 @@ int main(int argc, char** argv) {
     //                            "else {int a; a = 4; print(a);}";
 
 
-        const char* expr =
-        "function int fact(int n) {\
-                if (n < 3) {\
-                    return n;\
-                }\
-                return n*fact(n-1) + fact(n-2);\
-            }\
-        fact(1);";
+//        const char* expr =
+//        "function int fact(int n) {\
+//                if (n < 3) {\
+//                    return n;\
+//                }\
+//                return n*fact(n-1) + fact(n-2);\
+//            }\
+//        fact(1);";
 
+    const char *  expr = "int t; t= 5; print(t);";
 
-
-    //cout << "expr = " << expr <<endl;
+    cout << "expr = " << expr <<endl;
 
     Translator* translator = new BytecodeTranslatorImpl();
 
