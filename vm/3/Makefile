@@ -1,5 +1,6 @@
 ROOT   = .
 VM_ROOT = ../../../..
+OPT = 1
 
 USER_CFLAGS = -Wno-unused
 ifneq ($(NO_JIT), 1)

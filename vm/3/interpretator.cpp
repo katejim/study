@@ -2,7 +2,9 @@
 void InterpretCode::handleByteCode(){
     Instruction instruction;
     do {
+
         instruction = byteCode()->getInsn(position);
+        //cout << position<<" "<< (Instruction)instruction<<endl;
         position += getInstructionLength(instruction);
         switch (instruction) {
         case BC_ILOAD: case BC_DLOAD: case BC_SLOAD:
@@ -27,25 +29,95 @@ void InterpretCode::handleByteCode(){
             mathOperation<double>(instruction);
             break;
         case BC_IADD: case BC_ISUB: case BC_IMUL: case BC_IDIV: case BC_IMOD:
-            mathOperation<int>(instruction);
+            mathOperation<int64_t>(instruction);
             break;
         case BC_SWAP:
             swapValues();
             break;
         case BC_ICMP:
-            compareVar<int>(instruction);
+            compareVar<int64_t>(instruction);
             break;
         case BC_DCMP:
-            compareVar<int>(instruction);
+            compareVar<double>(instruction);
+            break;
         case BC_JA:
-            position = byteCode()->getInt64(position - 2);
+            jump(byteCode()->getInt16(position - 2));
+            break;
+        case BC_IFICMPE: case BC_IFICMPG:
+            cmpInstruction(instruction);
+            break;
+        case BC_DNEG: case BC_INEG:
+        case BC_D2I: case BC_I2D:
+            handleTopValue(instruction);
+            break;
+        case BC_IAAND: case BC_IAOR: case BC_IAXOR:
+            logicalOperation(instruction);
+            break;
+        case BC_STOP:
+            break;
+            //TODO WE can use forVar instead globalVar
+        case BC_LOADIVAR0: case BC_LOADIVAR1: case BC_STOREIVAR0: case BC_STOREIVAR1:
+            handleAdditionVars(instruction);
+            break;
+        case BC_CALL:
+            handleCallNode(instruction);
+            break;
+        case BC_RETURN:
+            handleReturnNode();
             break;
         default:
+            cout << "no such instruction = " << (Instruction)instruction<< " " <<position<<endl;
+            return;
             break;
         }
     }while (instruction != BC_STOP);
 }
+void InterpretCode::jump(int16_t offset){
+    // -3 + 1 because 3 -instructionLength & we have added already len to position
+    position += ((int32_t)offset - 3 + 1);
+}
+Var InterpretCode::getValueFromStack(){
+    assert(variables.size()>0);
+    Var var = variables.top();
+    variables.pop();
+    return var;
+}
 
+void InterpretCode::logicalOperation(Instruction instruction){
+    Var var1 = getValueFromStack();
+    Var var2 = getValueFromStack();
+    Var result(VT_INT, "arlogical");
+    switch (instruction) {
+    case BC_IAAND:
+        result.setIntValue(var1.getIntValue()&var2.getIntValue());
+        break;
+    case BC_IAOR:
+        result.setIntValue(var1.getIntValue()|var2.getIntValue());
+        break;
+    case BC_IAXOR:
+        result.setIntValue(var1.getIntValue()^var2.getIntValue());
+        break;
+    default:
+        break;
+    }
+    variables.push(result);
+}
+void InterpretCode::cmpInstruction(Instruction instruction){
+    Var var1 = getValueFromStack();
+    Var var2 = getValueFromStack();
+    switch (instruction) {
+    case BC_IFICMPE:
+        if (getValue<int64_t>(var1) == getValue<int64_t>(var2))
+            jump(byteCode()->getInt16(position - 2));
+        break;
+    case BC_IFICMPG:
+        if (getValue<int64_t>(var1) > getValue<int64_t>(var2))
+            jump(byteCode()->getInt16(position - 2));
+        break;
+    default:
+        break;
+    }
+}
 void InterpretCode::loadVar(Instruction instruction){
     int16_t idxContext = byteCode()->getInt16(position-4);
     int16_t idxVar = byteCode()->getInt16(position-2);
@@ -63,10 +135,11 @@ void InterpretCode::saveVar(Instruction instruction){
     variables.pop();
 
     Context::Variable mVar = std::make_pair(idxVar, var);
-
-    mMap.insert(std::make_pair(Utils::convertToString(idxVar), mVar));
-
-    context->variableMap = mMap;
+    if (mMap.find(Utils::convertToString(idxVar)) != mMap.end())
+        mMap.at(Utils::convertToString(idxVar)).second = var;
+     else
+      mMap.insert(std::make_pair(Utils::convertToString(idxVar), mVar));
+    context->variableMap = mMap;    
 }
 
 void InterpretCode::handleTopValue(Instruction instruction){
@@ -81,21 +154,21 @@ void InterpretCode::handleTopValue(Instruction instruction){
         variables.push(doubleV);
         break;
     case BC_D2I:
-        intV.setIntValue((int)getValue<int>(var));
+        intV.setIntValue((int)getValue<int64_t>(var));
         variables.push(intV);
         break;
     case BC_DNEG:
-        if (doubleV.getDoubleValue() == 0.0)
-            doubleV.setDoubleValue(0.0);
-        else
+        if (var.getDoubleValue() == 0.0)
             doubleV.setDoubleValue(1.0);
+        else
+            doubleV.setDoubleValue(0.0);
         variables.push(doubleV);
         break;
     case BC_INEG:
-        if (intV.getIntValue() == 0)
-            intV.setIntValue(0);
-        else
+        if (var.getIntValue() == 0)
             intV.setIntValue(1);
+        else
+            intV.setIntValue(0);
         variables.push(intV);
         break;
     default:
@@ -105,10 +178,8 @@ void InterpretCode::handleTopValue(Instruction instruction){
 void InterpretCode::swapValues(){
     if (variables.size() < 2)
         assert(variables.size() > 2);
-    Var var1 = variables.top();
-    variables.pop();
-    Var var2 = variables.top();
-    variables.pop();
+    Var var1 = getValueFromStack();
+    Var var2 = getValueFromStack();
     variables.push(var1);
     variables.push(var2);
 }
@@ -160,7 +231,7 @@ void InterpretCode::handleAdditionVars(Instruction instruction){
     case BC_LOADIVAR0:
         variables.push(var0);
         break;
-    case BC_LOADDVAR1:
+    case BC_LOADIVAR1:
         variables.push(var1);
         break;
     default:
@@ -168,3 +239,25 @@ void InterpretCode::handleAdditionVars(Instruction instruction){
     }
 }
 
+void InterpretCode::handleCallNode(Instruction instruction){
+    int16_t funcIdx = byteCode()->getInt16(position-2);
+    contextStack.push(currenFunction->id());
+    contextStack.push(position);
+    position = 0;
+    currenFunction = (BytecodeFunction*) functionById(funcIdx);
+    //cout << "curF = " << currenFunction->id()<<endl;
+}
+
+void InterpretCode::handleReturnNode()
+{
+    //return to position
+    position = contextStack.top();
+    //cout << "positionAfterReturn = " << position <<endl;
+    contextStack.pop();
+
+    //return to function
+    currenFunction = (BytecodeFunction*) functionById(contextStack.top());
+    contextStack.pop();
+    //cout << "fucntionAfterReturn = " << currenFunction->id()<<endl;
+
+}

@@ -13,6 +13,7 @@ using namespace mathvm;
 using namespace std;
 
 int main(int argc, char** argv) {
+    int i = 1;
     string impl = "intepreter";
     const char* script = NULL;
     for (int32_t i = 1; i < argc; i++) {
@@ -53,23 +54,47 @@ int main(int argc, char** argv) {
     //                       "print(i);"
     //                       "}";
 
-    //    const char* expr = "int a; a = 31; if (a > 0)"
-    //                            "{ int a; a = 3; print(a);} "
-    //                            "else {int a; a = 4; print(a);}";
 
 
-//        const char* expr =
-//        "function int fact(int n) {\
-//                if (n < 3) {\
-//                    return n;\
-//                }\
-//                return n*fact(n-1) + fact(n-2);\
-//            }\
-//        fact(1);";
+    //        const char* expr =
+    //        "function int fact(int n) {\
+    //                if (n < 3) {\
+    //                    return n;\
+    //                }\
+    //                return n*fact(n-1) + fact(n-2);\
+    //            }\
+    //        fact(1);";
 
-    const char *  expr = "int t; t= 5; print(t);";
 
-    cout << "expr = " << expr <<endl;
+//    const char *  expr = "int x;\
+//    int y;\
+//    x = 7;\
+//    y = 8;\
+//    if (x < y && y > 1 && !(x < 2)) {\
+//        print('1: Less\n');\
+//    }\
+//    if (x == y) {\
+//        print('2: Equal\n');\
+//    } else {\
+//        print('2: Different\n');\
+//    }\
+//    if (x <= 7) {\
+//        print('3: Lesser\n');\
+//    } else {\
+//        print('3: Greater\n');\
+//    }\
+//    if (x >= 77) {\
+//        print('4: Greater\n');\
+//    } else {\
+//        print('4: Lesser\n');\
+//    };";
+
+
+    const char *  expr = "double x;\
+            double y;\
+            x = 3.0;\
+            y = 1.0;\
+            print((y > x) * (y <= x), '\n');";
 
     Translator* translator = new BytecodeTranslatorImpl();
 
@@ -95,6 +120,7 @@ int main(int argc, char** argv) {
                "error '%s'\n",
                line, offset,
                translateStatus->getErrorCstr());
+        return 1;
     } else {
         if (impl != "intepreter") {
             assert(code != 0);

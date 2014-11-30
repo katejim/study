@@ -7,6 +7,7 @@
 #include <iostream>
 #include <map>
 #include "interpretator.h"
+#include "exceptions.h"
 
 using namespace mathvm;
 using std::ostream;
@@ -86,7 +87,6 @@ private:
     map <VarType, Instruction> loadMap;
     map <VarType, Instruction> storeMap;
     map <VarType, Instruction> pushMap;
-    map <VarType, Instruction> popMap;
     map <VarType, Instruction> printMap;
     map <VarType, Instruction> sumMap;
     map <VarType, Instruction> subMap;
@@ -111,16 +111,20 @@ Status *BytecodeTranslatorImpl::translate(const string & program,
     if (status && status->isError()) return status;
 
     InterpretCode kc;
+    try {
     ByteCodeVisitor result(parser.top(), &kc);
     *code = result.getCode();
 
-//    Code::FunctionIterator it(*code);
-//    while(it.hasNext()){
-//        BytecodeFunction *bcF = (BytecodeFunction*)it.next();
-//        cout << endl<<"nameF = " <<bcF->name() << endl;
-//        bcF->bytecode()->dump(cout);
-//        cout << endl;
-//    }
+//        Code::FunctionIterator it(*code);
+//        while(it.hasNext()){
+//            BytecodeFunction *bcF = (BytecodeFunction*)it.next();
+//            cout << endl<<"nameF = " <<bcF->name() << " idx = " << bcF->id()<<endl;
+//            bcF->bytecode()->dump(cout);
+//            cout << endl;
+//        }
+    } catch (Exception ex){
+        return Status::Error(ex.what());
+    }
 
     vector<Var *> vars;
     return kc.execute(vars);

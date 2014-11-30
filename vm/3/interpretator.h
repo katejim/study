@@ -4,6 +4,7 @@
 #include "context.h"
 #include "utils.h"
 #include <stack>
+#include "exceptions.h"
 using std::stack;
 using namespace mathvm;
 //TODO unexpected behavior when only announce var
@@ -15,13 +16,17 @@ public:
     {}
     virtual Status* execute(vector<Var*>& vars) {
         Code::FunctionIterator it(this);
+
         currenFunction = (BytecodeFunction*)it.next();
-        cout << currenFunction->name() << endl;
+        contextStack.push(currenFunction->id());
         currentContext = createContext(0);
 
-        byteCode()->dump(cout);
+        //byteCode()->dump(cout);
+        try {
         handleByteCode();
-
+        }catch(Exception ex){
+            return Status::Error(ex.what());
+        }
         return Status::Ok();
     }
 
@@ -41,8 +46,9 @@ private:
     Bytecode *byteCode() {
         return currenFunction->bytecode();
     }
-    uint8_t position;
+    uint32_t position;
     stack <Var> variables;
+    stack <uint32_t> contextStack;
     Context * currentContext;
     int16_t contextIdx;
     int16_t varNameIdx;
@@ -59,6 +65,13 @@ private:
     void swapValues();
     void handleTopValue(Instruction instruction);
     void handleAdditionVars(Instruction instruction);
+    void jump(int16_t position);
+    void cmpInstruction(Instruction instruction);
+    void logicalOperation(Instruction instruction);
+    Var getValueFromStack();
+    void handleCallNode(Instruction instruction);
+    void handleReturnNode();
+
 private:
     Context * createContext(int16_t idx){
         if (contextMap.find(idx) != contextMap.end())
@@ -72,16 +85,19 @@ private:
     }
     Context * getContext(int16_t idx){
         if (contextMap.find(idx) != contextMap.end())
-            return contextMap.at(idx);
-
-        cout << "ACCESS to unexistece context";
+            return contextMap.at(idx);        
+        else
+            throw Exception("try to load unexistence context");
     }
 
     Var getVariable(Context * context, int16_t idx){
         if (context->variableMap.find(Utils::convertToString(idx)) != context->variableMap.end())
             return context->variableMap.at(Utils::convertToString(idx)).second;
-
-        cout << "ACCESS to unexistece variable";
+        else
+            throw Exception("try to load unexistence variable "
+                            + Utils::convertToString(context->idx)  + " "
+                            + Utils::convertToString(idx)
+                            + Utils::convertToString(position));
     }
 
     //TODO handle strings
@@ -92,7 +108,9 @@ private:
             var.setIntValue(value);
             break;
         case VT_DOUBLE:
-            var.setDoubleValue(value);
+            //cout << "dValue = " << value<<endl;
+            var.setDoubleValue((double)value);
+            //cout << var.getDoubleValue()<<endl;
             break;
         case VT_STRING:
             //var.setStringValue(value.c_str());
@@ -119,20 +137,20 @@ private:
         default:
             break;
         }
-
+        throw Exception("variable can be int, double or string type, but try to handle another");
     }
 
     void createDefaultVar(Instruction instruction){
         Var var(Utils::getType(instruction), "default");
         switch (instruction) {
         case BC_ILOAD0:
-            setValue<int>(var, 0);
+            setValue<int64_t>(var, 0);
             break;
         case BC_ILOAD1:
-            setValue<int>(var, 1);
+            setValue<int64_t>(var, 1);
             break;
         case BC_ILOADM1:
-            setValue<int>(var, -1);
+            setValue<int64_t>(var, -1);
             break;
         case BC_DLOAD0:
             setValue<double>(var, 0);
@@ -154,7 +172,7 @@ private:
     }
 
     template <typename T>
-    Var mathOperation(Instruction instruction){
+    void mathOperation(Instruction instruction){
         T value1 = getValue<T>(variables.top());
         Var result = variables.top();
         variables.pop();
@@ -176,18 +194,20 @@ private:
             //        case BC_IMOD:
             //            setValue(result, value1 % value2);
             //            break;
+
         default:
             break;
         }
         variables.push(result);
-        return result;
     }
     template <typename T>
     void compareVar(Instruction instruction){
         Var result(Utils::getType(instruction), "cmpres");
         Var varUpper = variables.top();
+        //cout << varUpper.getDoubleValue() <<endl;
         variables.pop();
         Var varLower = variables.top();
+        //cout << varLower.getDoubleValue() <<endl;
         variables.pop();
         T valueUpper  = getValue<T>(varUpper);
         T valueLower = getValue<T>(varLower);
@@ -200,8 +220,12 @@ private:
             variables.push(result);
         }
         else{
-            setValue<T>(result, -1);
+
+            setValue<T>(result, -1.0);
+            //cout << "res = " << result.getDoubleValue()<<endl;
             variables.push(result);
+           // cout << typeToName(result.type())<<endl;
+           // cout << variables.top().getDoubleValue();
         }
     }
 };

@@ -34,6 +34,8 @@ void ByteCodeVisitor::initContext(BlockNode *node){
         AstVar * var = it.next();
         Var varr(var->type(), var->name());
         Variable variable = make_pair(varIndx++, varr);
+        byteCode()->addInsn(zeroMap[var->type()]);
+        storeValueFromStack(tASSIGN, var->type(), var->type(), make_pair(current->idx, variable.first));
         varMap.insert(make_pair(var->name(), variable));
     }
     allVariables.push_back(varMap);
@@ -64,9 +66,9 @@ VarType ByteCodeVisitor::getTypeToBinOperation(VarType left, VarType right){
     if (left==VT_INVALID)
         assert(left == VT_INVALID);
     if (left == VT_STRING)
-        assert(left==VT_STRING);
+        throw Exception("left part is string. can't do binary operations with strings");
     if (right == VT_STRING)
-        assert(right == VT_STRING);
+        throw Exception("right part is string. can't do binary operations with strings");
     if(left == right)
         return left;
     if (left != right)
@@ -151,6 +153,8 @@ void ByteCodeVisitor::visitStoreNode(StoreNode * node)
     resultType = node->var()->type();
     VarType needType = resultType;
     node->value()->visit(this);
+    if (resultType == VT_VOID)
+        throw Exception("can't assign value with function result, because function return void");
     VarType currentType = resultType;
     storeValueFromStack(node->op(), needType, currentType, getVarIdx(current, node->var()->name()));
 }
@@ -160,6 +164,9 @@ void ByteCodeVisitor::visitPrintNode(PrintNode * node)
 {
     for(int i = 0; i != node->operands(); ++i)
     {
+        if ((node->operandAt(i)->isBinaryOpNode())
+            && (node->operandAt(i)->asBinaryOpNode()->kind() == tRANGE))
+            throw Exception("can't print range operation");
         node ->operandAt(i)->visit(this);
         printValueFromStack(resultType);
     }
@@ -180,7 +187,7 @@ void ByteCodeVisitor::visitBlockNode(BlockNode * node)
             if (nativeFunctions.find(idx) != nativeFunctions.end())
                 call(idx, true);
             //else
-                //call(idx, false);
+            //call(idx, false);
         }
         else
             node->nodeAt(i)->visit(this);
@@ -190,6 +197,7 @@ void ByteCodeVisitor::visitBlockNode(BlockNode * node)
 //native
 void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
 {
+    resultType = node->signature().at(0).first;
     bool native = false;
     if (node->body()->nodeAt(0)->isNativeCallNode()){
         native = true;
@@ -233,6 +241,8 @@ void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
             Var varr(var->type(), var->name());
 
             Variable variable = make_pair(varIndx++, varr);
+            byteCode()->addInsn(zeroMap[var->type()]);
+            storeValueFromStack(tASSIGN, var->type(), var->type(), make_pair(current->idx, variable.first));
             varMap.insert(make_pair(var->name(), variable));
         }
 
@@ -273,9 +283,15 @@ void ByteCodeVisitor::visitFunctionNode(FunctionNode * node)
 void ByteCodeVisitor::visitCallNode(CallNode * node)
 {
     BytecodeFunction *bcF = (BytecodeFunction*) code->functionByName(node->name());
-    for(uint32_t i = 0; i < node->parametersNumber(); i++)
+    vector<SignatureElement> fSignature = bcF->signature();
+    for(uint32_t i = 0; i < node->parametersNumber(); i++){
         node->parameterAt(i)->visit(this);
+        if (resultType != fSignature.at(i + 1).first)
+            typeConverter(fSignature.at(i + 1).first, resultType);
+            //throw Exception("different type at function signature and argument");
+    }
     call(bcF->id(), false);
+    resultType = fSignature.at(0).first;
 }
 
 
@@ -303,13 +319,27 @@ void ByteCodeVisitor::visitWhileNode(WhileNode * node)
 //suppose that variables don't clear after pushing on stack
 void ByteCodeVisitor::visitForNode(ForNode * node)
 {
+    if (!node->inExpr()->isBinaryOpNode())
+        throw Exception("forNode must contain binary range node");
+    if (node->inExpr()->asBinaryOpNode()->kind() != tRANGE)
+        throw Exception("forNode must contain binary range node");
+
+    if (node->var()->type() != VT_INT)
+        throw Exception("var in forNode must be int");
+
+    int16_t contextIdx = getVarIdx(current, node->var()->name()).first;
+    int64_t varIdx = getVarIdx(current, node->var()->name()).second;
+
     Label inM(byteCode()), endM(byteCode());
+
 
     node->inExpr()->visit(this);
 
     byteCode()->bind(inM);
 
     byteCode()->addInsn(BC_LOADIVAR1);
+    byteCode()->addInsn(BC_LOADIVAR0);
+    storeValueFromStack(tASSIGN, VT_INT, VT_INT, getVarIdx(current, node->var()->name()));
     byteCode()->addInsn(BC_LOADIVAR0);
 
     byteCode()->addBranch(BC_IFICMPG, endM);
@@ -319,7 +349,7 @@ void ByteCodeVisitor::visitForNode(ForNode * node)
     node->body()->visit(this);
 
     //increment var
-    byteCode()->addInsn(BC_LOADDVAR0);
+    byteCode()->addInsn(BC_LOADIVAR0);
     byteCode()->addInsn(unitMap[VT_INT]);
     byteCode()->addInsn(BC_IADD);
     byteCode()->addInsn(BC_STOREIVAR0);
@@ -354,6 +384,7 @@ void ByteCodeVisitor::visitIfNode(IfNode * node)
     {
         initContext(node->elseBlock());
         node->elseBlock()->visit(this);
+        current = current->parent;
     }
     byteCode()->bind(endM);
     current = current->parent;
@@ -363,10 +394,13 @@ void ByteCodeVisitor::visitIfNode(IfNode * node)
 
 void ByteCodeVisitor::visitReturnNode(ReturnNode * node)
 {
-    if (node->returnExpr() != NULL)
-    {
+    if (node->returnExpr() != NULL) {
+        if(resultType == VT_VOID)
+            throw Exception("can't return value from void function");
+
         node->returnExpr()->visit(this);
     }
+
     byteCode()->addInsn(BC_RETURN);
 }
 
@@ -386,6 +420,7 @@ void ByteCodeVisitor::visitTop()
     current = topContext;
     top->node()->visit(this);
     byteCode()->addInsn(BC_STOP);
+
 }
 
 
@@ -534,14 +569,14 @@ void ByteCodeVisitor::comparateOperation(TokenKind kind, VarType resType){
     byteCode()->addInsn(compareMap[resType]);
     switch (kind) {
     case tEQ:
-        unaryOperations(resType, tNOT);
+        byteCode()->addInsn(negateMap[resultType]);
         break;
     case tNEQ:
         break;
     case tGT:
         byteCode()->addInsn(unitMap[resType]);
         byteCode()->addInsn(subMap[resType]);
-        unaryOperations(resType, tNOT);
+        byteCode()->addInsn(negateMap[resultType]);
         break;
     case tLE:
         byteCode()->addInsn(unitMap[resType]);
@@ -553,7 +588,7 @@ void ByteCodeVisitor::comparateOperation(TokenKind kind, VarType resType){
     case tLT:
         byteCode()->addInsn(unitMap[resType]);
         byteCode()->addInsn(sumMap[resType]);
-        unaryOperations(resType, tNOT);
+        byteCode()->addInsn(negateMap[resultType]);
         break;
     default:
         break;
@@ -562,12 +597,16 @@ void ByteCodeVisitor::comparateOperation(TokenKind kind, VarType resType){
 void ByteCodeVisitor::unaryOperations(VarType resultType, TokenKind kind){
     switch (kind) {
     case tSUB:
+        if (resultType == VT_STRING)
+            throw Exception("unary minus can't apply to string type");
         byteCode()->addInsn(zeroMap[resultType]);
         byteCode()->addInsn(subMap[resultType]);
         break;
         //0 -> 1
         // !0 -> 0
     case tNOT:
+        if (resultType != VT_INT)
+            throw Exception("NOT appertaion applicable only to int type");
         byteCode()->addInsn(negateMap[resultType]);
     default:
         break;
@@ -587,9 +626,6 @@ void ByteCodeVisitor::initMaps(){
     pushMap[VT_DOUBLE] = BC_DLOAD;
     pushMap[VT_STRING] = BC_SLOAD;
 
-    popMap[VT_INT] = BC_STORECTXIVAR;
-    popMap[VT_DOUBLE] = BC_STORECTXDVAR;
-    popMap[VT_STRING] = BC_STORECTXSVAR;
 
     printMap[VT_INT] = BC_IPRINT;
     printMap[VT_DOUBLE] = BC_DPRINT;
@@ -603,6 +639,10 @@ void ByteCodeVisitor::initMaps(){
 
     multMap[VT_INT] = BC_IMUL;
     multMap[VT_DOUBLE] = BC_DMUL;
+
+    divMap[VT_INT] = BC_IDIV;
+    divMap[VT_DOUBLE] = BC_DDIV;
+
 
     zeroMap[VT_INT] = BC_ILOAD0;
     zeroMap[VT_DOUBLE] = BC_DLOAD0;
