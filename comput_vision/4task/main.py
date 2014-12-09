@@ -2,14 +2,12 @@ __author__ = 'kate'
 
 import cv2
 import numpy as np
-from math import sqrt
 
-
-KEY_POINT_COUNT = 500
+KEY_POINT_COUNT = 2000
 ROTATE_ANGEL = 45
 SCALE = 2
 FLANN_INDEX_KDTREE = 0
-DISTANCE = 0.5
+DISTANCE = 5
 
 
 def rotateImage(beforeRotate, angel, scale):
@@ -56,14 +54,11 @@ index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
 search_params = dict(checks=50)  # or pass empty dictionary
 
 flann = cv2.FlannBasedMatcher(index_params, search_params)
-
 matches = flann.knnMatch(desInitial, desTransformed, k=2)
-
+findPointsCount = len(matches)
 
 # Need to draw only good matches, so create a mask
 matchesMask = [[0, 0] for i in xrange(len(matches))]
-
-# ratio test as per Lowe's paper
 for i, (m, n) in enumerate(matches):
     if m.distance < 0.7 * n.distance:
         matchesMask[i] = 1
@@ -84,8 +79,8 @@ for match in matches:
     if (distance < DISTANCE):
         sum += 1
 
-print("precision : ")
-print (sum * 100 / len(matches))
+
+print ("precision = ", sum * 100.0 / findPointsCount)
 
 # write images
 result_image = drawMatches(inImg, keyPointsInitial, transformedImage, keyPointsTransformed, matches)
