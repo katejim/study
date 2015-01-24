@@ -1,0 +1,15 @@
+struct tm *recieved_tm = gmtime(&time_received);
+    std::cout << "sever time: " << recieved_tm->tm_hour << ":" << recieved_tm->tm_min << ":" << recieved_tm->tm_sec << std::endl;
+
+    gettimeofday(&tvorig, (struct timezone *)NULL);
+    long currentTime = (tvorig.tv_sec % (24*60*60)) * 1000 + tvorig.tv_usec / 1000;
+
+    long travelTime = (
+                (ntohl(return_packet->icmp_rtime) - ntohl(return_packet->icmp_otime)) +
+                (currentTime - ntohl(return_packet->icmp_ttime))) / 2;
+
+    long deltaTime = (ntohl(return_packet->icmp_rtime) - ntohl(return_packet->icmp_otime)) - travelTime;
+
+    std::cout << "currentTime = "  << currentTime <<std::endl <<
+                 "travelTime = " << travelTime <<std::endl <<
+                 "deltaTime = " << deltaTime << std::endl;

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kate/Documents/commonStudy/study/network/icmp/icmp/main.cpp
+netinet/in.h
+-
+netinet/in_systm.h
+-
+netinet/ip.h
+-
+netinet/ip_icmp.h
+-
+stdio.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+iostream
+-
+sys/types.h
+-
+unistd.h
+-
+sys/time.h
+-
+
