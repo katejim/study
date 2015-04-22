@@ -1,1 +1,1 @@
-astyle -p -xe -k2 -xG -N -Y -f -t --style=allman
+astyle -p -xe -k2 -N -Y -f -t --style=allman
